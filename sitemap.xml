@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+  <url>
+    <loc>https://puttinggreenmexico.com/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://puttinggreenmexico.com/images/hero-lago.jpg</image:loc>
+      <image:title>Putting green residencial Hole One Greens</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://puttinggreenmexico.com/images/nocturno.jpg</image:loc>
+      <image:title>Putting green residencial con iluminación nocturna</image:title>
+    </image:image>
+  </url>
+</urlset>
