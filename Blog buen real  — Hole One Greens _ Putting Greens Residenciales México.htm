@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///Users/olgagovela/Downloads/blog-preview_4.html -->
+<html lang="es-MX"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Hole One Greens | Putting Greens Residenciales México</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/css2" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --moss:#2d4a1f;--moss-soft:#3d5d2a;--sage:#7ba23f;
+  --gold:#c9a94a;--gold-warm:#b8973d;--gold-pale:#e0c878;
+  --ink:#141a10;--ink-soft:#3a3a3a;--ink-muted:#666;
+  --white:#fff;--cream:#f7f5f0;--cream-dark:#ede9e1;
+  --font-display:'Fraunces',Georgia,serif;
+  --font-body:'Inter',-apple-system,system-ui,sans-serif;
+}
+body{font-family:var(--font-body);color:var(--ink);background:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ===== NAVBAR ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:72px;
+  background:rgba(20,26,16,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.brand{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--gold-pale);letter-spacing:0.04em}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.75);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-pale)}
+.nav-links a.active{border-bottom:1px solid var(--gold)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 20px;background:var(--gold);color:var(--ink);
+  font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  border-radius:4px;transition:all .2s;
+}
+.nav-cta:hover{background:var(--gold-pale)}
+
+/* ===== BLOG HERO ===== */
+.blog-hero{
+  padding-top:72px;
+  background:linear-gradient(180deg,#141a10 0%,#1e2b14 100%);
+  text-align:center;padding-bottom:72px;padding-top:144px;
+}
+.blog-hero .section-label{
+  font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.blog-hero .section-label::before,.blog-hero .section-label::after{
+  content:'';width:24px;height:1px;background:var(--gold);
+}
+.blog-hero h1{
+  font-family:var(--font-display);font-size:clamp(40px,5vw,64px);
+  font-weight:500;color:var(--white);line-height:1.05;
+  font-variation-settings:"opsz" 144;margin-bottom:16px;
+}
+.blog-hero h1 em{font-style:italic;color:var(--gold-pale);font-weight:400}
+.blog-hero p{
+  font-size:17px;color:rgba(255,255,255,0.7);max-width:520px;
+  margin:0 auto 40px;line-height:1.7;
+}
+
+/* ===== FILTROS ===== */
+.blog-filtros{
+  background:var(--cream);
+  border-bottom:1px solid var(--cream-dark);
+  padding:0 48px;
+}
+.blog-filtros-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:8px;
+  overflow-x:auto;padding:16px 0;
+}
+.filtro-btn{
+  padding:8px 18px;border-radius:100px;font-size:12px;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;
+  border:1.5px solid var(--cream-dark);background:var(--white);
+  color:var(--ink-soft);white-space:nowrap;transition:all .2s;
+}
+.filtro-btn.active,.filtro-btn:hover{
+  background:var(--moss);color:var(--white);border-color:var(--moss);
+}
+
+/* ===== GRID ARTÍCULOS ===== */
+.blog-grid-section{background:var(--cream);padding:64px 48px 96px}
+.blog-grid-inner{max-width:1200px;margin:0 auto}
+
+/* Artículo destacado */
+.article-featured{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 32px rgba(0,0,0,0.1);
+  margin-bottom:48px;background:var(--white);
+}
+.article-featured .art-img{
+  position:relative;overflow:hidden;min-height:400px;
+}
+.article-featured .art-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s ease;
+}
+.article-featured:hover .art-img img{transform:scale(1.04)}
+.article-featured .art-badge{
+  position:absolute;top:20px;left:20px;
+  padding:6px 14px;background:var(--gold);color:var(--ink);
+  font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  border-radius:100px;
+}
+.article-featured .art-body{
+  padding:48px;display:flex;flex-direction:column;justify-content:center;
+}
+.art-cat{
+  font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:12px;
+}
+.art-title{
+  font-family:var(--font-display);font-size:clamp(24px,2.5vw,36px);
+  font-weight:500;line-height:1.15;color:var(--ink);margin-bottom:16px;
+  font-variation-settings:"opsz" 144;
+}
+.art-title em{font-style:italic;color:var(--moss);font-weight:400}
+.art-excerpt{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:28px}
+.art-meta{
+  display:flex;align-items:center;gap:16px;
+  font-size:12px;color:var(--ink-muted);margin-bottom:24px;
+}
+.art-meta span{display:flex;align-items:center;gap:6px}
+.art-meta svg{width:13px;height:13px;opacity:0.6}
+.art-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--moss);padding-bottom:3px;border-bottom:1.5px solid var(--moss);
+  transition:all .2s;width:fit-content;
+}
+.art-link:hover{color:var(--gold-warm);border-color:var(--gold-warm);gap:14px}
+
+/* Grid 3 columnas */
+.articles-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+}
+.article-card{
+  background:var(--white);border-radius:10px;overflow:hidden;
+  box-shadow:0 2px 16px rgba(0,0,0,0.07);
+  transition:transform .25s,box-shadow .25s;cursor:pointer;
+}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(0,0,0,0.13)}
+.card-img{position:relative;overflow:hidden;height:220px}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.article-card:hover .card-img img{transform:scale(1.06)}
+.card-badge{
+  position:absolute;top:14px;left:14px;
+  padding:5px 12px;background:var(--white);color:var(--moss);
+  font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  border-radius:100px;box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+.card-body{padding:24px}
+.card-body .art-cat{margin-bottom:8px}
+.card-body .art-title{font-size:clamp(17px,1.8vw,22px);margin-bottom:10px}
+.card-body .art-excerpt{font-size:14px;margin-bottom:16px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:16px;border-top:1px solid var(--cream-dark);
+  font-size:12px;color:var(--ink-muted);
+}
+.card-read{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--moss);transition:gap .2s;
+}
+.card-read:hover{gap:10px;color:var(--gold-warm)}
+
+/* ===== SEPARADOR ===== */
+.divider{
+  max-width:1200px;margin:0 auto 48px;
+  display:flex;align-items:center;gap:16px;
+  color:var(--ink-muted);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--cream-dark)}
+
+/* ===== ARTICLE INTERIOR ===== */
+.article-interior{display:none}
+.article-interior.visible{display:block}
+.blog-grid-section.hidden{display:none}
+
+/* Breadcrumb */
+.breadcrumb{
+  background:var(--cream);padding:14px 48px;
+  border-bottom:1px solid var(--cream-dark);
+}
+.breadcrumb-inner{
+  max-width:860px;margin:0 auto;
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--ink-muted);
+}
+.breadcrumb a{color:var(--moss);font-weight:600}
+.breadcrumb a:hover{color:var(--gold-warm)}
+.breadcrumb span{opacity:0.5}
+
+/* Article header */
+.art-header{
+  background:linear-gradient(180deg,#141a10 0%,#1e2b14 100%);
+  padding:96px 48px 64px;text-align:center;
+}
+.art-header .art-cat{color:var(--gold);font-size:12px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.art-header .art-cat::before,.art-header .art-cat::after{
+  content:'';width:20px;height:1px;background:var(--gold);
+}
+.art-header h1{
+  font-family:var(--font-display);font-size:clamp(32px,4vw,54px);
+  font-weight:500;color:var(--white);line-height:1.1;
+  font-variation-settings:"opsz" 144;max-width:800px;margin:0 auto 20px;
+}
+.art-header h1 em{font-style:italic;color:var(--gold-pale);font-weight:400}
+.art-header .art-meta{justify-content:center;color:rgba(255,255,255,0.6);margin-bottom:0}
+
+/* Article body */
+.art-content-wrap{
+  max-width:860px;margin:0 auto;padding:72px 48px 96px;
+}
+.art-cover{
+  border-radius:10px;overflow:hidden;margin-bottom:56px;
+  box-shadow:0 8px 40px rgba(0,0,0,0.15);
+}
+.art-cover img{width:100%;height:420px;object-fit:cover;display:block}
+.art-cover figcaption{
+  padding:12px 20px;background:var(--cream);
+  font-size:12px;color:var(--ink-muted);font-style:italic;
+}
+
+/* Article typography */
+.art-body h2{
+  font-family:var(--font-display);font-size:clamp(22px,2.5vw,32px);
+  font-weight:500;color:var(--moss);line-height:1.2;
+  font-variation-settings:"opsz" 144;
+  margin:48px 0 18px;padding-bottom:12px;
+  border-bottom:1.5px solid var(--gold);
+}
+.art-body h3{
+  font-family:var(--font-display);font-size:clamp(18px,2vw,24px);
+  font-weight:500;color:var(--ink);margin:32px 0 12px;
+}
+.art-body p{
+  font-size:16.5px;color:var(--ink-soft);line-height:1.85;
+  margin-bottom:22px;
+}
+.art-body strong{color:var(--ink);font-weight:700}
+.art-body ul,.art-body ol{
+  margin:20px 0 24px 24px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.art-body li{font-size:16px;color:var(--ink-soft);line-height:1.7}
+.art-body li::marker{color:var(--gold)}
+
+/* Callout box */
+.callout{
+  background:linear-gradient(135deg,rgba(45,74,31,0.06),rgba(201,169,74,0.08));
+  border-left:3px solid var(--gold);
+  border-radius:0 8px 8px 0;
+  padding:24px 28px;margin:32px 0;
+}
+.callout p{margin:0;font-size:16px;color:var(--moss);font-weight:500;line-height:1.7}
+
+/* Tabla de precios */
+.precio-table{
+  width:100%;border-collapse:collapse;margin:28px 0;
+  border-radius:8px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.07);
+}
+.precio-table thead tr{background:var(--moss);color:var(--white)}
+.precio-table th{padding:14px 20px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-align:left}
+.precio-table tbody tr:nth-child(even){background:var(--cream)}
+.precio-table tbody tr:nth-child(odd){background:var(--white)}
+.precio-table td{padding:13px 20px;font-size:14px;color:var(--ink-soft);border-bottom:1px solid var(--cream-dark)}
+.precio-table td:last-child{font-weight:700;color:var(--moss)}
+
+/* FAQ en artículo */
+.art-faq{margin:40px 0}
+.art-faq h3{font-family:var(--font-display);font-size:22px;color:var(--moss);margin-bottom:20px}
+.faq-item{border:1px solid var(--cream-dark);border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-q{
+  padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  background:var(--white);color:var(--ink);
+}
+.faq-q:hover{background:var(--cream)}
+.faq-q svg{width:16px;height:16px;color:var(--gold);flex-shrink:0}
+.faq-a{padding:0 20px 16px;font-size:15px;color:var(--ink-soft);line-height:1.7;background:var(--cream)}
+
+/* CTA inline */
+.art-cta-box{
+  background:linear-gradient(135deg,var(--moss),var(--moss-soft));
+  border-radius:12px;padding:40px;text-align:center;margin:48px 0;
+  color:var(--white);
+}
+.art-cta-box h3{
+  font-family:var(--font-display);font-size:28px;font-weight:500;
+  font-variation-settings:"opsz" 144;margin-bottom:10px;
+}
+.art-cta-box p{color:rgba(255,255,255,0.8);margin-bottom:24px;font-size:15px}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 28px;background:#25d366;color:var(--white);
+  font-size:14px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;
+  border-radius:8px;box-shadow:0 6px 24px rgba(37,211,102,0.4);
+  transition:all .2s;
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,0.5)}
+.btn-wa svg{width:18px;height:18px}
+
+/* Tags */
+.art-tags{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0 0}
+.tag{
+  padding:6px 14px;border:1.5px solid var(--cream-dark);
+  border-radius:100px;font-size:12px;font-weight:600;
+  letter-spacing:0.06em;color:var(--ink-soft);
+  transition:all .2s;
+}
+.tag:hover{border-color:var(--moss);color:var(--moss)}
+
+/* Related articles */
+.related{
+  background:var(--cream);padding:64px 48px;
+  border-top:1px solid var(--cream-dark);
+}
+.related-inner{max-width:1200px;margin:0 auto}
+.related h2{
+  font-family:var(--font-display);font-size:28px;font-weight:500;
+  color:var(--moss);margin-bottom:32px;font-variation-settings:"opsz" 144;
+}
+
+/* Nav toggle */
+.demo-toggle{
+  position:fixed;bottom:28px;right:28px;z-index:200;
+  display:flex;flex-direction:column;gap:10px;
+}
+.demo-btn{
+  padding:10px 20px;border-radius:8px;font-size:12px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;
+  border:none;transition:all .2s;
+}
+.demo-btn.lista{background:var(--moss);color:var(--white)}
+.demo-btn.interior{background:var(--gold);color:var(--ink)}
+.demo-btn:hover{transform:translateY(-2px)}
+
+/* Footer mini */
+.footer-mini{
+  background:var(--ink);color:rgba(255,255,255,0.5);
+  text-align:center;padding:24px;font-size:13px;
+}
+.footer-mini strong{color:var(--gold-pale)}
+
+@media(max-width:900px){
+  .nav{padding:0 24px}
+  .article-featured{grid-template-columns:1fr}
+  .articles-grid{grid-template-columns:1fr}
+  .blog-grid-section,.breadcrumb,.art-header,.art-content-wrap,.related{padding-left:24px;padding-right:24px}
+  .blog-filtros{padding:0 24px}
+  .article-featured .art-body{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="brand">Hole One Greens</a>
+  <ul class="nav-links">
+    <li><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Beneficios</a></li>
+    <li><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Medidas</a></li>
+    <li><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Proyectos</a></li>
+    <li><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Proceso</a></li>
+    <li><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Preguntas</a></li>
+    <li><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="active">Blog</a></li>
+  </ul>
+  <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="nav-cta">Cotización gratis</a>
+</nav>
+
+<!-- ============================================================ -->
+<!-- VISTA 1: LISTADO DEL BLOG -->
+<!-- ============================================================ -->
+<div id="vista-lista">
+
+  <!-- Hero del blog -->
+  <div class="blog-hero">
+    <div class="section-label">Guías y consejos</div>
+    <h1>Todo sobre<br><em>putting greens en México</em></h1>
+    <p>Guías, precios, comparativas y consejos para instalar tu putting green residencial ideal.</p>
+  </div>
+
+  <!-- Filtros por categoría -->
+  <div class="blog-filtros">
+    <div class="blog-filtros-inner">
+      <button class="filtro-btn active">Todos</button>
+      <button class="filtro-btn">Costos y Precios</button>
+      <button class="filtro-btn">Instalación</button>
+      <button class="filtro-btn">Comparativas</button>
+      <button class="filtro-btn">Mantenimiento</button>
+      <button class="filtro-btn">Diseño de Jardín</button>
+    </div>
+  </div>
+
+  <!-- Grid de artículos -->
+  <div class="blog-grid-section">
+    <div class="blog-grid-inner">
+
+      <!-- Artículo destacado -->
+      <div class="article-featured" onclick="mostrarInterior()">
+        <div class="art-img">
+          <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1535131749006-b7f58c99034b" alt="Cuánto cuesta un putting green residencial en México">
+          <div class="art-badge">⭐ Más leído</div>
+        </div>
+        <div class="art-body">
+          <div class="art-cat">Costos y Precios</div>
+          <h2 class="art-title">¿Cuánto cuesta un putting green residencial<em> en México</em>?</h2>
+          <p class="art-excerpt">Todo lo que necesitas saber sobre precios, medidas y factores que influyen en el costo de tu putting green. Desde $23,600 hasta proyectos a medida.</p>
+          <div class="art-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+              7 min de lectura
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+              26 Abril 2026
+            </span>
+          </div>
+          <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="art-link">
+            Leer artículo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Más artículos -->
+      <div class="divider">Más artículos</div>
+
+      <div class="articles-grid">
+
+        <!-- Card 2 -->
+        <div class="article-card">
+          <div class="card-img">
+            <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1632923786024-5b5e7be29ffa" alt="Cómo instalar un putting green">
+            <div class="card-badge">Instalación</div>
+          </div>
+          <div class="card-body">
+            <div class="art-cat">Instalación</div>
+            <h3 class="art-title">Cómo instalar un putting green en tu jardín: guía paso a paso</h3>
+            <p class="art-excerpt">Desde la preparación del terreno hasta el acabado final. Todo el proceso explicado de manera clara.</p>
+            <div class="art-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                9 min
+              </span>
+              <span>22 Abril 2026</span>
+            </div>
+            <div class="card-footer">
+              <span>Instalación</span>
+              <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="card-read">
+                Leer
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="article-card">
+          <div class="card-img">
+            <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1587174486073-ae5e5cff23aa" alt="Putting green artificial vs natural">
+            <div class="card-badge">Comparativas</div>
+          </div>
+          <div class="card-body">
+            <div class="art-cat">Comparativas</div>
+            <h3 class="art-title">Putting green artificial vs natural: ¿cuál conviene más?</h3>
+            <p class="art-excerpt">Análisis honesto de costos, mantenimiento, durabilidad y experiencia de juego de cada opción.</p>
+            <div class="art-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                6 min
+              </span>
+              <span>18 Abril 2026</span>
+            </div>
+            <div class="card-footer">
+              <span>Comparativas</span>
+              <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="card-read">
+                Leer
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="article-card">
+          <div class="card-img">
+            <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1504198322253-cfa87a0ff25f" alt="Mantenimiento putting green">
+            <div class="card-badge">Mantenimiento</div>
+          </div>
+          <div class="card-body">
+            <div class="art-cat">Mantenimiento</div>
+            <h3 class="art-title">Guía de mantenimiento para tu putting green residencial</h3>
+            <p class="art-excerpt">Los cuidados básicos que necesita tu green para que dure los 9 años de vida útil garantizados.</p>
+            <div class="art-meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                5 min
+              </span>
+              <span>14 Abril 2026</span>
+            </div>
+            <div class="card-footer">
+              <span>Mantenimiento</span>
+              <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="card-read">
+                Leer
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /articles-grid -->
+    </div>
+  </div>
+
+  <div class="footer-mini"><strong>Hole One Greens</strong> · puttinggreenmexico.com · +52 81162963</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- VISTA 2: INTERIOR DE ARTÍCULO -->
+<!-- ============================================================ -->
+<div id="vista-interior" class="article-interior">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Inicio</a>
+      <span>/</span>
+      <a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#">Blog</a>
+      <span>/</span>
+      <span style="color:var(--ink-soft)">¿Cuánto cuesta un putting green residencial?</span>
+    </div>
+  </div>
+
+  <!-- Header del artículo -->
+  <div class="art-header">
+    <div class="art-cat">Costos y Precios</div>
+    <h1>¿Cuánto cuesta un putting green residencial<em> en México?</em></h1>
+    <div class="art-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        7 minutos de lectura
+      </span>
+      <span>26 de Abril, 2026</span>
+      <span>Por Hole One Greens</span>
+    </div>
+  </div>
+
+  <!-- Contenido del artículo -->
+  <div class="art-content-wrap">
+
+    <!-- Foto de portada -->
+    <figure class="art-cover">
+      <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1535131749006-b7f58c99034b(1)" alt="Putting green residencial en jardín mexicano">
+      <figcaption>Putting green Compact 3×4 m instalado en residencia en San Pedro, Nuevo León.</figcaption>
+    </figure>
+
+    <div class="art-body">
+
+      <p>El costo de un putting green residencial en México varía según la medida, el tipo de fibra, la preparación del terreno y los accesorios incluidos. En esta guía te explicamos todos los factores para que puedas presupuestar con certeza.</p>
+
+      <div class="callout">
+        <p>💡 <strong>En resumen:</strong> Los putting greens residenciales en México cuestan desde <strong>$23,600 MXN + IVA</strong> para una medida compacta de 3×4 m, hasta <strong>$365,000 MXN + IVA</strong> para proyectos grandes de 15×20 m con iluminación LED.</p>
+      </div>
+
+      <h2>Precios por tamaño de putting green</h2>
+
+      <p>Estos son los precios de referencia nacional de Hole One Greens para 2026, con instalación incluida:</p>
+
+      <table class="precio-table">
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Medida</th>
+            <th>Superficie</th>
+            <th>Precio desde</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Compact</td><td>3 × 4 m</td><td>12 m²</td><td>$23,600 + IVA</td></tr>
+          <tr><td>Urban</td><td>4 × 6 m</td><td>24 m²</td><td>$39,000 + IVA</td></tr>
+          <tr><td>Signature</td><td>6 × 10 m</td><td>60 m²</td><td>$94,000 + IVA</td></tr>
+          <tr><td>Estate</td><td>9 × 14 m</td><td>126 m²</td><td>$180,000 + IVA</td></tr>
+          <tr><td>Club</td><td>15 × 20 m</td><td>300 m²</td><td>$365,000 + IVA</td></tr>
+        </tbody>
+      </table>
+
+      <h2>¿Qué factores afectan el precio?</h2>
+
+      <h3>1. La medida del green</h3>
+      <p>Es el factor más importante. A mayor superficie, mayor costo de material y mano de obra. Sin embargo, el costo por m² disminuye en proyectos más grandes.</p>
+
+      <h3>2. Tipo de fibra</h3>
+      <p>Todos los putting greens de Hole One Greens utilizan <strong>fibra premium texturizada rizada no-direccional</strong>, el mismo tipo que se usa en greens de clubes profesionales. Esta fibra garantiza una rodadura homogénea independientemente de la dirección del golpe.</p>
+
+      <h3>3. Preparación del terreno</h3>
+      <p>Un terreno nivelado y drenado correctamente es fundamental. Si la superficie requiere relleno, nivelación profunda o instalación de drenaje, el costo aumenta.</p>
+
+      <ul>
+        <li>Terreno plano en buen estado: sin costo adicional</li>
+        <li>Nivelación menor (hasta 10 cm): incluida en la mayoría de proyectos</li>
+        <li>Movimientos de tierra mayores: cotización aparte</li>
+      </ul>
+
+      <h3>4. Qué incluye el precio</h3>
+      <p>Cada putting green incluye pasto putting green texturizado rizado, fringe perimetral (rough), instalación profesional, hoyos con taza metálica y banderines.</p>
+      <p><strong>No incluye:</strong> preparación de la base (la prepara el cliente), fletes a destino, viáticos del equipo de instalación, iluminación, bunkers ni paisajismo adicional.</p>
+
+      <!-- CTA inline -->
+      <div class="art-cta-box">
+        <h3>¿Quieres saber el precio exacto para tu espacio?</h3>
+        <p>Te enviamos una cotización personalizada en menos de 1 hora, sin compromiso.</p>
+        <a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20cotizar%20mi%20putting%20green" class="btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"></path></svg>
+          Solicitar cotización gratis
+        </a>
+      </div>
+
+      <!-- FAQ -->
+      <div class="art-faq">
+        <h3>Preguntas frecuentes sobre precios</h3>
+        <div class="faq-item">
+          <div class="faq-q">
+            ¿El precio incluye instalación?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-a">El precio incluye material e instalación profesional. No incluye preparación de la base (la prepara el cliente), fletes a destino ni viáticos del equipo de instalación, los cuales se cotizan según ubicación.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            ¿Cuánto tiempo dura un putting green artificial?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-a">Nuestros putting greens tienen 9 años de vida útil garantizada. Con mantenimiento adecuado pueden durar 12-15 años sin perder calidad de rodadura.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            ¿Puedo instalar un putting green en terraza o roof garden?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+          <div class="faq-a">Sí, con la preparación de base adecuada. Instalamos en superficies de concreto, adoquín, madera y estructuras metálicas. El sistema incluye drenaje perimetral.</div>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="art-tags">
+        <span class="tag">Putting green México</span>
+        <span class="tag">Precio putting green</span>
+        <span class="tag">Jardín residencial</span>
+        <span class="tag">Pasto sintético</span>
+        <span class="tag">Golf en casa</span>
+      </div>
+
+    </div><!-- /art-body -->
+  </div><!-- /art-content-wrap -->
+
+  <!-- Artículos relacionados -->
+  <div class="related">
+    <div class="related-inner">
+      <h2>Artículos relacionados</h2>
+      <div class="articles-grid">
+        <div class="article-card">
+          <div class="card-img">
+            <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1632923786024-5b5e7be29ffa" alt="Instalación">
+            <div class="card-badge">Instalación</div>
+          </div>
+          <div class="card-body">
+            <div class="art-cat">Instalación</div>
+            <h3 class="art-title">Cómo instalar un putting green en tu jardín</h3>
+            <div class="card-footer"><span>9 min</span><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="card-read">Leer <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="card-img">
+            <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1587174486073-ae5e5cff23aa" alt="Comparativa">
+            <div class="card-badge">Comparativas</div>
+          </div>
+          <div class="card-body">
+            <div class="art-cat">Comparativas</div>
+            <h3 class="art-title">Putting green artificial vs natural</h3>
+            <div class="card-footer"><span>6 min</span><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="card-read">Leer <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div>
+          </div>
+        </div>
+        <div class="article-card">
+          <div class="card-img">
+            <img src="./Blog buen real  — Hole One Greens _ Putting Greens Residenciales México_files/photo-1504198322253-cfa87a0ff25f" alt="Mantenimiento">
+            <div class="card-badge">Mantenimiento</div>
+          </div>
+          <div class="card-body">
+            <div class="art-cat">Mantenimiento</div>
+            <h3 class="art-title">Guía de mantenimiento para tu putting green</h3>
+            <div class="card-footer"><span>5 min</span><a href="file:///Users/olgagovela/Downloads/blog-preview_4.html#" class="card-read">Leer <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-mini"><strong>Hole One Greens</strong> · puttinggreenmexico.com · +52 81162963</div>
+</div>
+
+<!-- Botones de demo -->
+<div class="demo-toggle">
+  <button class="demo-btn lista" onclick="mostrarLista()">← Ver listado</button>
+  <button class="demo-btn interior" onclick="mostrarInterior()">Ver artículo →</button>
+</div>
+
+<script>
+function mostrarLista(){
+  document.getElementById('vista-lista').style.display='block';
+  document.getElementById('vista-interior').style.display='none';
+}
+function mostrarInterior(){
+  document.getElementById('vista-lista').style.display='none';
+  document.getElementById('vista-interior').style.display='block';
+  window.scrollTo(0,0);
+}
+</script>
+
+
+</body></html>
