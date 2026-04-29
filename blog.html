@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Hole One Greens — Putting Greens Residenciales en México</title>
+<meta name="description" content="Guías, precios y consejos editoriales sobre putting greens residenciales en México. La conversación honesta sobre tener un green privado en casa.">
+<meta name="keywords" content="blog putting green, putting green México, green residencial, golf en casa, putting green precio">
+<link rel="canonical" href="https://puttinggreenmexico.com/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog | Hole One Greens — Putting Greens Residenciales en México">
+<meta property="og:description" content="Guías, precios y consejos editoriales sobre putting greens residenciales en México.">
+<meta property="og:url" content="https://puttinggreenmexico.com/blog/">
+<meta property="og:locale" content="es_MX">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Blog Hole One Greens","description":"Guías editoriales sobre putting greens residenciales en México","url":"https://puttinggreenmexico.com/blog/","publisher":{"@type":"Organization","name":"Hole One Greens","url":"https://puttinggreenmexico.com"},"inLanguage":"es-MX","blogPost":[{"@type":"BlogPosting","headline":"El costo real de un putting green residencial en México","url":"https://puttinggreenmexico.com/blog/costo-putting-green-residencial-mexico/","datePublished":"2026-04-26","author":{"@type":"Organization","name":"Hole One Greens"}},{"@type":"BlogPosting","headline":"El putt corto: el golpe que decide tu handicap","url":"https://puttinggreenmexico.com/blog/putt-corto-handicap-golf/","datePublished":"2026-04-22","author":{"@type":"Organization","name":"Hole One Greens"}},{"@type":"BlogPosting","headline":"Sintético vs natural: la decisión que ningún golfista lamenta","url":"https://puttinggreenmexico.com/blog/putting-green-sintetico-vs-natural/","datePublished":"2026-04-18","author":{"@type":"Organization","name":"Hole One Greens"}},{"@type":"BlogPosting","headline":"Plusvalía: cuánto suma un putting green a tu propiedad","url":"https://puttinggreenmexico.com/blog/plusvalia-putting-green-residencia/","datePublished":"2026-04-14","author":{"@type":"Organization","name":"Hole One Greens"}}]}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0e0e0c;
+  --black-soft:#1a1a17;
+  --bone:#faf8f3;
+  --linen:#f3eee5;
+  --sand:#e8e1d2;
+  --line:#dcd6c8;
+  --warm-grey:#a89e8c;
+  --green:#3d5a3a;
+  --green-deep:#2a4028;
+  --sage:#c8d2bd;
+  --accent:#7a9a4c;        /* verde golf vibrante (como Nike Golf) */
+  --accent-light:#a8c47d;  /* verde claro fresh */
+  --signal:#c9a94a;         /* dorado solo para acentos chiquitos */
+  --ink:#1f2218;
+  --ink-soft:#3d4138;
+  --ink-muted:#6b6e62;
+  --white:#fff;
+  --font-display:'DM Sans','Inter',-apple-system,system-ui,sans-serif;
+  --font-body:'Inter',-apple-system,system-ui,sans-serif;
+}
+body{font-family:var(--font-body);color:var(--ink);background:var(--bone);line-height:1.6;-webkit-font-smoothing:antialiased;font-weight:400}
+a{text-decoration:none;color:inherit}
+
+/* PROTOTIPO TOGGLE — quitar antes de subir si no se quiere */
+/* Card link wrapper para clicks */
+.card-link{display:block;text-decoration:none;color:inherit}
+.card-soon{opacity:0.7;cursor:default}
+.card-soon:hover{transform:none}
+
+/* NAVBAR — negro arriba */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:80px;background:var(--black);border-bottom:1px solid rgba(250,248,243,0.08)}
+.brand{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--bone);letter-spacing:-0.02em;}
+.nav-links{display:flex;gap:40px;list-style:none;align-items:center}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,243,0.7);transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--bone)}
+.nav-links a.active{position:relative}
+.nav-links a.active::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:1px;background:var(--accent)}
+.nav-cta{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;background:transparent;color:var(--bone);font:500 11px var(--font-body);letter-spacing:0.22em;text-transform:uppercase;border:1px solid var(--bone);border-radius:0;transition:all .35s}
+.nav-cta:hover{background:var(--bone);color:var(--black)}
+
+.hero-transition{display:none}
+
+/* ===== VIEW 1: BLOG INDEX ===== */
+.blog-hero{
+  background:var(--black);
+  background-image:url('https://raw.githubusercontent.com/govelamaster/puttinggreenmexico/main/header-blog.png');
+  background-size:cover;
+  background-position:center 40%;
+  background-repeat:no-repeat;
+  color:var(--bone);
+  padding:160px 56px 100px;
+  min-height:560px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+/* Overlay con degradado del lado izquierdo para legibilidad del texto */
+.blog-hero::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(14,14,12,0.78) 0%,rgba(14,14,12,0.55) 35%,rgba(14,14,12,0.15) 65%,rgba(14,14,12,0) 100%);
+  pointer-events:none;
+}
+/* Capa adicional de profundidad */
+.blog-hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(14,14,12,0.25) 0%,transparent 30%,transparent 70%,rgba(14,14,12,0.4) 100%);
+  pointer-events:none;
+}
+.blog-hero-inner{
+  max-width:1320px;width:100%;margin:0 auto;
+  position:relative;z-index:2;
+  text-align:left;
+  padding-right:40%;
+}
+.blog-hero-eyebrow{
+  display:inline-block;
+  font-size:11px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--accent-light);margin-bottom:32px;
+  position:relative;padding-left:48px;
+}
+.blog-hero-eyebrow::before{
+  content:'';position:absolute;top:50%;left:0;width:36px;height:1px;background:var(--accent-light);
+}
+.blog-hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(44px,5.8vw,76px);
+  font-weight:800;color:var(--bone);
+  line-height:1.02;letter-spacing:-0.035em;
+  margin-bottom:24px;
+  text-shadow:0 2px 24px rgba(0,0,0,0.4);
+}
+.blog-hero p{
+  font-family:var(--font-body);
+  font-size:18px;color:rgba(250,248,243,0.92);
+  max-width:520px;margin:0;line-height:1.55;
+  font-weight:500;
+  text-shadow:0 1px 16px rgba(0,0,0,0.4);
+}
+
+.hero-transition{background:linear-gradient(180deg,var(--black) 0%,var(--bone) 100%);height:80px}
+
+.blog-filtros{background:var(--bone);padding:24px 56px;display:flex;justify-content:center;border-bottom:1px solid var(--line)}
+.blog-filtros-inner{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:900px}
+.filtro-btn{
+  padding:10px 20px;background:var(--white);border:1.5px solid var(--line);
+  font:700 12px var(--font-body);letter-spacing:0;text-transform:none;
+  color:var(--ink-soft);cursor:pointer;transition:all .2s;
+  border-radius:100px;
+}
+.filtro-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filtro-btn.active{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.filtro-btn.active::after{display:none}
+
+/* GRID — 2x2 limpio */
+.blog-grid{
+  max-width:1280px;margin:0 auto;padding:96px 56px 96px;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:64px 48px;
+}
+
+.card{background:transparent;cursor:pointer;display:flex;flex-direction:column;transition:transform .4s ease}
+.card:hover{transform:translateY(-6px)}
+.card-img{aspect-ratio:16/10;overflow:hidden;background:var(--linen);margin-bottom:32px;position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(0.4,0,0.2,1);filter:brightness(0.96)}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-tag-light{
+  display:inline-block;
+  font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+  padding:5px 12px;background:rgba(122,154,76,0.1);border-radius:100px;
+  align-self:flex-start;
+}
+.card h3{
+  font-family:var(--font-display);
+  font-size:30px;font-weight:700;
+  line-height:1.15;color:var(--ink);
+  margin-bottom:16px;letter-spacing:-0.025em;
+  
+}
+.card h3 em{font-style:normal;color:var(--green);font-weight:700}
+.card-excerpt{font-family:var(--font-body);font-size:16px;color:var(--ink-soft);line-height:1.6;margin-bottom:24px;flex:1;font-weight:400;font-style:normal;}
+.card-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:12px;color:var(--ink-muted);font-weight:500;
+  letter-spacing:0;text-transform:none;
+  padding-top:18px;border-top:1px solid var(--line);
+}
+.card-readmore{font-weight:700;color:var(--ink);display:inline-flex;align-items:center;gap:6px;font-size:13px}
+.card-readmore::after{content:'→';transition:transform .25s;font-size:14px;letter-spacing:0}
+.card:hover .card-readmore::after{transform:translateX(6px)}
+
+/* ===== VIEW 2: ARTÍCULO ===== */
+.breadcrumb{background:var(--bone);padding:18px 56px;border-bottom:1px solid var(--line);margin-top:80px}
+.breadcrumb-inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:14px;font-size:11px;color:var(--ink-muted);letter-spacing:0.18em;text-transform:uppercase;font-weight:500}
+.breadcrumb a{color:var(--black)}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span.sep{opacity:0.4}
+
+.art-header{background:var(--black);color:var(--bone);padding:96px 56px 80px;text-align:center;position:relative;overflow:hidden}
+.art-header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(ellipse at top,rgba(168,138,90,0.1) 0%,transparent 50%)}
+.art-header-inner{max-width:880px;margin:0 auto;position:relative;z-index:2}
+.art-cat{
+  display:inline-block;
+  font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--accent-light);margin-bottom:36px;
+  position:relative;padding:0 32px;
+}
+.art-cat::before,.art-cat::after{content:'';position:absolute;top:50%;width:36px;height:1px;background:rgba(168,138,90,0.4)}
+.art-cat::before{right:100%}
+.art-cat::after{left:100%}
+.art-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(40px,6vw,68px);
+  font-weight:800;color:var(--bone);
+  line-height:1.02;letter-spacing:-0.035em;
+  
+  margin-bottom:36px;
+}
+.art-header h1 em{font-style:normal;color:var(--sage);font-weight:800}
+.art-meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;font-size:11px;color:rgba(250,248,243,0.6);font-weight:500;letter-spacing:0.22em;text-transform:uppercase}
+.art-meta-dot{width:24px;height:1px;background:rgba(250,248,243,0.3)}
+
+.art-cover{max-width:1200px;margin:-40px auto 0;padding:0 56px;position:relative;z-index:3}
+.art-cover-inner{overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.3)}
+.art-cover img{width:100%;height:580px;object-fit:cover;display:block}
+
+.art-content{max-width:760px;margin:0 auto;padding:80px 56px 64px}
+.art-lead{
+  font-family:var(--font-display);
+  font-size:20px;font-weight:600;
+  line-height:1.5;color:var(--green-deep);
+  margin-bottom:40px;font-style:normal;
+  
+  padding-bottom:32px;border-bottom:1px solid var(--line);
+}
+.art-content h2{
+  font-family:var(--font-display);
+  font-size:clamp(28px,3vw,36px);
+  font-weight:800;color:var(--ink);
+  line-height:1.15;letter-spacing:-0.03em;
+  
+  margin:64px 0 20px;
+}
+.art-content p{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);line-height:1.75;margin-bottom:24px;font-weight:400}
+.art-content strong{color:var(--ink);font-weight:700}
+
+.pull-quote{margin:56px 0;padding:48px 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pull-quote p{font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);font-weight:700;color:var(--green-deep);line-height:1.25;font-style:normal;letter-spacing:-0.025em}
+
+.highlight-box{background:var(--linen);border-left:2px solid var(--accent);padding:32px 40px;margin:48px 0;font-size:16.5px;color:var(--ink-soft);line-height:1.7}
+.highlight-box-label{font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+.highlight-box strong{color:var(--ink);font-weight:600}
+
+.cta-inline{background:var(--black);padding:56px;margin:64px 0;display:flex;align-items:center;gap:48px;color:var(--bone);position:relative;overflow:hidden}
+.cta-inline::before{content:'';position:absolute;top:-30%;right:-10%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,138,90,0.18) 0%,transparent 70%)}
+.cta-inline-text{flex:1;position:relative;z-index:2}
+.cta-inline-text .eyebrow{font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent-light);margin-bottom:14px;display:block}
+.cta-inline-text h3{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:8px}
+.cta-inline-text p{font-size:14.5px;color:rgba(250,248,243,0.65);margin:0;line-height:1.5}
+.cta-inline-btn{padding:18px 32px;background:var(--bone);color:var(--black);border:1px solid var(--bone);border-radius:0;font:500 11px var(--font-body);letter-spacing:0.24em;text-transform:uppercase;white-space:nowrap;transition:all .35s;position:relative;z-index:2}
+.cta-inline-btn:hover{background:transparent;color:var(--bone)}
+
+.art-author{display:flex;align-items:center;gap:20px;padding:32px 0;margin:56px 0 0;border-top:1px solid var(--line)}
+.art-author-avatar{width:60px;height:60px;border-radius:50%;background:var(--black);display:flex;align-items:center;justify-content:center;color:var(--accent-light);font-family:var(--font-display);font-size:24px;font-weight:800;}
+.art-author-info .name{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--ink);}
+.art-author-info .role{font-size:13px;color:var(--ink-muted);margin-top:4px}
+
+.related-section{background:var(--linen);padding:96px 56px;border-top:1px solid var(--line)}
+.related-inner{max-width:1280px;margin:0 auto}
+.related-eyebrow{display:block;text-align:center;font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.related-title{font-family:var(--font-display);font-size:42px;font-weight:800;color:var(--ink);text-align:center;margin-bottom:64px;letter-spacing:-0.035em;}
+.related-title em{color:var(--green);}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+
+/* ===== CONTACT FORM ===== */
+.contact-section{background:var(--bone);padding:120px 56px;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.contact-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1.05fr;gap:96px;align-items:center}
+
+.contact-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:32px;position:relative;padding-left:48px}
+.contact-eyebrow::before{content:'';position:absolute;top:50%;left:0;width:36px;height:1px;background:var(--accent)}
+.contact-title{font-family:var(--font-display);font-size:clamp(38px,4.5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-0.025em;color:var(--ink);margin-bottom:24px}
+.contact-title em{font-style:normal;color:var(--green)}
+.contact-sub{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);line-height:1.55;margin-bottom:48px;max-width:440px;font-weight:500;font-style:normal;}
+.contact-features{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.feature-item{display:flex;align-items:center;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.feature-num{font-family:var(--font-display);font-size:14px;font-weight:500;color:var(--accent);letter-spacing:0.04em;flex-shrink:0;}
+.feature-text{font-size:14.5px;color:var(--ink-soft);font-weight:500}
+.feature-text strong{color:var(--ink);font-weight:600}
+
+.contact-card{background:var(--white);padding:56px 48px;border:1px solid var(--line);position:relative}
+.contact-card-corner{position:absolute;width:32px;height:32px;border:1px solid var(--accent)}
+.contact-card-corner.tl{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.contact-card-corner.br{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.contact-card-header{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.contact-card-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.contact-card-title{font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-0.015em;margin-bottom:10px}
+.contact-card-sub{font-size:14.5px;color:var(--ink-muted);line-height:1.55}
+
+.contact-form{display:flex;flex-direction:column;gap:24px}
+.contact-field label{display:block;font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--black);margin-bottom:10px}
+.contact-field input,.contact-field textarea,.contact-field select{width:100%;padding:14px 0;background:transparent;border:none;border-bottom:1px solid var(--line);font-family:var(--font-body);font-size:16px;color:var(--ink);transition:border-color .3s ease;resize:none;border-radius:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+.contact-field select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a89e8c' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:24px}
+.contact-field input::placeholder,.contact-field textarea::placeholder{color:var(--warm-grey);font-weight:400}
+.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{outline:none;border-bottom-color:var(--accent)}
+.contact-field textarea{font-family:var(--font-body);line-height:1.55;min-height:80px;padding-top:14px}
+.contact-hint{font-size:11px;color:var(--ink-muted);margin-top:8px;}
+
+.contact-submit{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;padding:20px 32px;background:var(--black);color:var(--bone);border:1px solid var(--black);cursor:pointer;font:500 11px var(--font-body);letter-spacing:0.28em;text-transform:uppercase;border-radius:0;width:100%;transition:all .35s ease;position:relative;overflow:hidden}
+.contact-submit::before{content:'';position:absolute;inset:0;background:var(--accent);transform:translateY(101%);transition:transform .4s cubic-bezier(0.4,0,0.2,1)}
+.contact-submit > *{position:relative;z-index:1}
+.contact-submit:hover::before{transform:translateY(0)}
+
+.contact-trust{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line);font-size:10px;color:var(--ink-muted);font-weight:500;letter-spacing:0.22em;text-transform:uppercase}
+.contact-trust .sep{width:4px;height:4px;border-radius:50%;background:var(--line)}
+
+.footer-mini{background:var(--black);color:rgba(250,248,243,0.5);text-align:center;padding:36px;font-size:10px;letter-spacing:0.32em;text-transform:uppercase}
+.footer-mini strong{color:var(--bone);font-weight:700;letter-spacing:0.04em;text-transform:none;font-family:var(--font-display);font-size:15px;}
+
+@media(max-width:900px){
+  .nav,.blog-hero,.blog-filtros,.blog-grid,.breadcrumb,.art-header,.art-cover,.art-content,.related-section,.contact-section{padding-left:24px;padding-right:24px}
+  .nav{height:64px}
+  .nav-links{display:none}
+  .blog-hero{padding-top:120px;padding-bottom:72px;min-height:480px;background-position:right center}
+  .blog-hero::before{background:linear-gradient(180deg,rgba(14,14,12,0.85) 0%,rgba(14,14,12,0.6) 100%)}
+  .blog-hero-inner{padding-right:0}
+  .blog-grid{grid-template-columns:1fr;gap:56px}
+  .related-grid{grid-template-columns:1fr;gap:40px}
+  .cta-inline{flex-direction:column;text-align:center;padding:40px 28px;gap:28px}
+  .art-cover img{height:340px}
+  .art-content{padding:56px 24px}
+  .contact-inner{grid-template-columns:1fr;gap:64px}
+  .contact-card{padding:40px 28px}
+  .contact-section{padding:80px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a href="/" class="brand">Hole One Greens</a>
+  <ul class="nav-links">
+    <li><a href="/#beneficios">Beneficios</a></li>
+    <li><a href="/#medidas">Medidas</a></li>
+    <li><a href="/#proyectos">Proyectos</a></li>
+    <li><a href="/#proceso">Proceso</a></li>
+    <li><a href="/blog.html" class="active">Blog</a></li>
+  </ul>
+  <a href="https://wa.me/528116296384" class="nav-cta">Diseña tu green</a>
+</nav>
+
+<!-- LISTADO DEL BLOG -->
+<main>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <span class="blog-hero-eyebrow">Guías y consejos</span>
+      <h1>Todo sobre putting greens en México</h1>
+      <p>Guías, precios, comparativas y consejos para instalar tu putting green residencial ideal.</p>
+    </div>
+  </section>
+
+  <div class="hero-transition" style="display:none"></div>
+
+  <div class="blog-filtros">
+    <div class="blog-filtros-inner">
+      <button class="filtro-btn active">Todos</button>
+      <button class="filtro-btn">Inversión</button>
+      <button class="filtro-btn">Técnica</button>
+      <button class="filtro-btn">Comparativas</button>
+      <button class="filtro-btn">Proyectos</button>
+    </div>
+  </div>
+
+  <section class="blog-grid">
+
+    <!-- ARTÍCULO 1: COSTO (más leído / SEO principal) -->
+    <a href="/cuanto-cuesta-putting-green-residencial-mexico.html" class="card-link">
+    <article class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=90" alt="Putting green residencial Hole One Greens en jardín premium"></div>
+      <span class="card-tag-light">Inversión · Lectura destacada</span>
+      <h3>El costo real de un putting green residencial</h3>
+      <p class="card-excerpt">Cinco modelos, factores que mueven el precio, qué incluye una instalación profesional y cómo decidir el tamaño correcto para tu jardín.</p>
+      <div class="card-footer">
+        <span>26 Abril 2026 · 7 min</span>
+        <span class="card-readmore">Leer artículo</span>
+      </div>
+    </article>
+    </a>
+
+    <!-- ARTÍCULO 2: PUTT CORTO (próximamente) -->
+    <article class="card card-soon">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200&q=90" alt="Putt corto en green con bandera y bola de golf"></div>
+      <span class="card-tag-light">Técnica</span>
+      <h3>El putt corto: el golpe que decide tu handicap</h3>
+      <p class="card-excerpt">El 80% de los putts en una ronda son menores a tres metros. Por qué practicarlos en casa transforma tu juego en menos de tres meses.</p>
+      <div class="card-footer">
+        <span>Próximamente</span>
+        <span class="card-readmore" style="opacity:0.5">5 min</span>
+      </div>
+    </article>
+
+    <!-- ARTÍCULO 3: SINTÉTICO VS NATURAL (próximamente) -->
+    <article class="card card-soon">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?w=1200&q=90" alt="Golfista haciendo putt en green sintético"></div>
+      <span class="card-tag-light">Comparativas</span>
+      <h3>Sintético vs natural: la decisión correcta</h3>
+      <p class="card-excerpt">Análisis honesto de costo, mantenimiento y experiencia de juego. Por qué prácticamente nadie elige natural en residencia hoy.</p>
+      <div class="card-footer">
+        <span>Próximamente</span>
+        <span class="card-readmore" style="opacity:0.5">6 min</span>
+      </div>
+    </article>
+
+    <!-- ARTÍCULO 4: PLUSVALÍA (próximamente) -->
+    <article class="card card-soon">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=1200&q=90" alt="Vista aérea de residencia con putting green"></div>
+      <span class="card-tag-light">Inversión</span>
+      <h3>Plusvalía: cuánto suma a tu propiedad</h3>
+      <p class="card-excerpt">Datos reales de incremento en valor de inmueble en zonas premium —San Pedro, Polanco, Bosque Real, Riviera Maya— al integrar un green.</p>
+      <div class="card-footer">
+        <span>Próximamente</span>
+        <span class="card-readmore" style="opacity:0.5">5 min</span>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- FORMULARIO (idéntico al de la landing) -->
+  <section class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="contact-eyebrow">✦ Cotización gratuita · Respuesta el mismo día</span>
+        <h2 class="contact-title">¿Tienes el espacio?<br>Nosotros ponemos el resto.</h2>
+        <p class="contact-sub">Llena los 4 campos y te mandamos opciones y precios por WhatsApp hoy mismo. Sin compromiso, sin presión.</p>
+        <div class="contact-features">
+          <div class="feature-item"><span class="feature-num">01</span><span class="feature-text"><strong>Respuesta directa</strong> en menos de una hora</span></div>
+          <div class="feature-item"><span class="feature-num">02</span><span class="feature-text"><strong>Diseño personalizado</strong> para tu jardín</span></div>
+          <div class="feature-item"><span class="feature-num">03</span><span class="feature-text"><strong>Garantía nueve años</strong> contra decoloración</span></div>
+          <div class="feature-item"><span class="feature-num">04</span><span class="feature-text"><strong>Cobertura nacional</strong> en toda la República</span></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-corner tl"></span>
+        <span class="contact-card-corner br"></span>
+        <form class="contact-form" onsubmit="enviarWA(event)">
+          <input type="text" name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <div class="contact-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="contact-field">
+            <label for="medida">¿Qué medida te interesa?</label>
+            <select id="medida" name="medida" required>
+              <option value="">Selecciona tu green ideal</option>
+              <option>Compact · 3 × 4 m — desde $23,600 + IVA</option>
+              <option>Urban · 4 × 6 m — desde $39,000 + IVA</option>
+              <option>Signature · 6 × 10 m — desde $94,000 + IVA</option>
+              <option>Estate · 9 × 14 m — desde $180,000 + IVA</option>
+              <option>Club · 15 × 20 m — desde $365,000 + IVA</option>
+              <option>Quiero asesoría personalizada</option>
+            </select>
+          </div>
+          <div class="contact-field">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" required placeholder="Ciudad donde se instalaría">
+          </div>
+          <div class="contact-field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required inputmode="numeric" pattern="[0-9 ]{10,15}" placeholder="10 dígitos">
+          </div>
+          <button type="submit" class="contact-submit">
+            <span>Quiero mi cotización gratis</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-mini"><strong>Hole One Greens</strong> &nbsp;·&nbsp; puttinggreenmexico.com</div>
+</main>
+
+
+<script>
+function enviarWA(e){
+  e.preventDefault();
+  const f=e.target;
+  if(f.hp.value)return false;
+  const nombre=f.nombre.value.trim();
+  const medida=f.medida.value.trim();
+  const ciudad=f.ciudad.value.trim();
+  const wa=f.whatsapp.value.replace(/\s/g,'').trim();
+  if(!/^[0-9]{10,15}$/.test(wa)){alert('Ingresa un número de WhatsApp válido (mínimo 10 dígitos).');return false}
+  const msg=`Hola, soy ${nombre}.\n\nQuiero cotizar: ${medida}\nCiudad: ${ciudad}\nMi WhatsApp: ${wa}`;
+  window.open(`https://wa.me/528116296384?text=${encodeURIComponent(msg)}`,'_blank');
+  return false;
+}
+</script>
+</body>
+</html>
