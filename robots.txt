@@ -1,40 +1,65 @@
-# Hole One Greens - https://puttinggreenmexico.com/
+# Hole One Greens — Putting Greens Residenciales Premium en México
+# https://puttinggreenmexico.com
 
+# Crawlers tradicionales — permitir todo
 User-agent: *
 Allow: /
 Disallow: /tmp/
 Disallow: /private/
 
-# AI crawlers — permitir explícitamente
+# ====================================
+# AI / LLM Crawlers — desbloqueados explícitamente
+# para máxima visibilidad en ChatGPT, Claude, Perplexity, Gemini, Copilot
+# ====================================
+
+# OpenAI (ChatGPT, GPT-4, búsqueda)
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Claude-Web
+User-agent: OAI-SearchBot
 Allow: /
 
+# Anthropic (Claude)
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Google (AI Overviews, Gemini, Bard)
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
+# Apple Intelligence
 User-agent: Applebot-Extended
 Allow: /
 
+# ByteDance (TikTok / Doubao)
 User-agent: Bytespider
 Allow: /
 
+# Common Crawl (alimenta múltiples LLMs)
+User-agent: CCBot
+Allow: /
+
+# Meta AI (Llama, Meta AI Assistant)
+User-agent: meta-externalagent
+Allow: /
+
+# ====================================
 # Sitemap
+# ====================================
 Sitemap: https://puttinggreenmexico.com/sitemap.xml
