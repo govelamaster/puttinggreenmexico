@@ -1,0 +1,10 @@
+/* TEAM */
+Company: Hole One Greens
+Site: https://puttinggreenmexico.com
+Location: Monterrey, Nuevo León, México
+Contact: +52 811 629 6384
+
+/* SITE */
+Last update: 2026/04/29
+Language: Spanish (Mexico)
+Standards: HTML5, CSS3, JavaScript

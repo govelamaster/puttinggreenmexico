@@ -1,65 +1,80 @@
-# Hole One Greens — Putting Greens Residenciales Premium en México
-# https://puttinggreenmexico.com
+# ===========================================================
+# robots.txt — puttinggreenmexico.com (Hole One Greens)
+# Última actualización: 29 de abril de 2026
+# ===========================================================
 
-# Crawlers tradicionales — permitir todo
-User-agent: *
+# ── Google ──────────────────────────────────────────────────
+User-agent: Googlebot
 Allow: /
-Disallow: /tmp/
-Disallow: /private/
+Crawl-delay: 1
 
-# ====================================
-# AI / LLM Crawlers — desbloqueados explícitamente
-# para máxima visibilidad en ChatGPT, Claude, Perplexity, Gemini, Copilot
-# ====================================
+User-agent: Googlebot-Image
+Allow: /
 
-# OpenAI (ChatGPT, GPT-4, búsqueda)
+User-agent: Google-Extended
+Allow: /
+
+# ── Bing / Microsoft Copilot ───────────────────────────────
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# ── OpenAI (ChatGPT) ──────────────────────────────────────
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: OAI-SearchBot
-Allow: /
-
-# Anthropic (Claude)
+# ── Anthropic (Claude) ────────────────────────────────────
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-# Perplexity AI
+# ── Perplexity ─────────────────────────────────────────────
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Perplexity-User
+# ── Meta AI ────────────────────────────────────────────────
+User-agent: FacebookBot
 Allow: /
 
-# Google (AI Overviews, Gemini, Bard)
-User-agent: Google-Extended
-Allow: /
-
-# Apple Intelligence
-User-agent: Applebot-Extended
-Allow: /
-
-# ByteDance (TikTok / Doubao)
-User-agent: Bytespider
-Allow: /
-
-# Common Crawl (alimenta múltiples LLMs)
-User-agent: CCBot
-Allow: /
-
-# Meta AI (Llama, Meta AI Assistant)
 User-agent: meta-externalagent
 Allow: /
 
-# ====================================
-# Sitemap
-# ====================================
+# ── Apple / Siri ───────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+# ── Otros buscadores ───────────────────────────────────────
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ── Bloquear scrapers no deseados ──────────────────────────
+User-agent: CCBot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+Allow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
+Allow: /
+
+# ── Regla general ──────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*.pdf$
+
+# ── Sitemaps ───────────────────────────────────────────────
 Sitemap: https://puttinggreenmexico.com/sitemap.xml
