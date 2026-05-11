@@ -252,6 +252,78 @@ a{text-decoration:none;color:inherit}
 .footer-mini{background:var(--ink);color:rgba(255,255,255,0.45);text-align:center;padding:24px;font-size:12.5px;letter-spacing:0.04em}
 .footer-mini strong{color:var(--gold-pale);font-weight:600}
 
+/* === BLOG RETENTION ELEMENTS === */
+.cat-bar{position:sticky;top:72px;z-index:90;background:var(--cream);border-bottom:1px solid var(--cream-dark);padding:14px 48px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cat-bar::-webkit-scrollbar{display:none}
+.cat-bar-in{max-width:1180px;margin:0 auto;display:flex;gap:8px;align-items:center}
+.cat-pill{display:inline-flex;align-items:center;padding:7px 16px;background:var(--white);border:1px solid var(--cream-dark);border-radius:100px;font-size:12px;font-weight:600;color:var(--ink-soft);white-space:nowrap;transition:all .2s}
+.cat-pill:hover{border-color:var(--ink);color:var(--ink)}
+.cat-pill.active{background:var(--ink);border-color:var(--ink);color:var(--gold-pale)}
+
+.tldr{max-width:760px;margin:40px auto 48px;padding:32px 36px;border:2px solid var(--ink);position:relative;background:var(--white)}
+.tldr::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:var(--sage)}
+.tldr-h{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
+.tldr-list{list-style:none;margin:0 0 22px}
+.tldr-list li{position:relative;padding:13px 0 13px 22px;border-bottom:1px solid var(--cream-dark);font-size:15px;color:var(--ink-soft);line-height:1.55}
+.tldr-list li:last-child{border-bottom:none}
+.tldr-list li::before{content:'';position:absolute;left:0;top:22px;width:6px;height:6px;border-radius:50%;background:var(--sage)}
+.tldr-list strong{color:var(--ink);font-weight:700}
+.tldr-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:var(--cream);border:1px solid var(--ink);border-radius:100px;font-size:13px;font-weight:700;color:var(--ink);transition:all .2s}
+.tldr-cta:hover{background:var(--ink);color:var(--gold-pale)}
+
+.wa-mid{max-width:760px;margin:56px auto;background:var(--ink);padding:36px 40px;display:flex;align-items:center;gap:28px;position:relative;overflow:hidden}
+.wa-mid::before{content:'';position:absolute;top:-40%;right:-10%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,196,125,0.12) 0%,transparent 70%)}
+.wa-mid-body{flex:1;position:relative;z-index:2}
+.wa-mid-title{font-family:var(--font-display);font-size:19px;font-weight:800;color:var(--white);line-height:1.25;margin-bottom:6px;letter-spacing:-0.015em}
+.wa-mid-desc{font-size:13.5px;color:rgba(255,255,255,0.62);margin:0;line-height:1.5}
+.wa-mid-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:#25d366;color:var(--white);font-size:13px;font-weight:700;letter-spacing:0.02em;border-radius:100px;white-space:nowrap;position:relative;z-index:2;transition:transform .2s;box-shadow:0 8px 22px rgba(37,211,102,0.32)}
+.wa-mid-btn:hover{transform:translateY(-2px)}
+.wa-mid-btn svg{width:18px;height:18px}
+
+.rel{max-width:1180px;margin:0 auto;padding:80px 48px 24px}
+.rel-h{font-family:var(--font-display);font-size:clamp(28px,3vw,38px);font-weight:800;color:var(--ink);text-align:center;margin-bottom:8px;letter-spacing:-0.02em}
+.rel-sub{font-size:14px;color:var(--ink-muted);text-align:center;margin-bottom:44px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.rc{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--cream-dark);overflow:hidden;transition:all .25s}
+.rc:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,0.08);border-color:var(--ink)}
+.rc-img{width:100%;height:160px;object-fit:cover;display:block}
+.rc-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.rc-cat{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.rc-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-0.015em;margin-bottom:8px}
+.rc-desc{font-size:13px;color:var(--ink-muted);line-height:1.5;margin-top:auto}
+.rc-soon{opacity:0.72}
+.rc-soon .rc-cat{color:var(--ink-muted)}
+
+.blog-ft{background:var(--cream);border-top:1px solid var(--cream-dark);padding:56px 48px}
+.blog-ft-in{max-width:1180px;margin:0 auto}
+.blog-ft-h{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--ink);text-align:center;margin-bottom:6px;letter-spacing:-0.015em}
+.blog-ft-sub{font-size:13px;color:var(--ink-muted);text-align:center;margin-bottom:32px}
+.blog-ft-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:32px}
+.bf-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--cream-dark);overflow:hidden;transition:all .2s}
+.bf-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,0.06);border-color:var(--ink)}
+.bf-card-img{width:100%;height:110px;object-fit:cover;display:block}
+.bf-card-body{padding:14px 16px 16px}
+.bf-card-cat{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;display:block}
+.bf-card-title{font-family:var(--font-display);font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-0.01em;display:block}
+.bf-card-soon{opacity:0.72}
+.blog-ft-all{text-align:center}
+.blog-ft-all a{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:transparent;border:1px solid var(--ink);border-radius:100px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:var(--ink);transition:all .25s}
+.blog-ft-all a:hover{background:var(--ink);color:var(--gold-pale)}
+
+@media (max-width:900px){
+  .cat-bar{top:64px;padding:12px 20px}
+  .tldr{margin:32px 20px 40px;padding:24px 22px}
+  .tldr-list li{font-size:14px;padding:12px 0 12px 20px}
+  .tldr-list li::before{top:21px}
+  .wa-mid{margin:48px 20px;padding:28px 24px;flex-direction:column;align-items:flex-start;gap:18px;text-align:left}
+  .wa-mid-btn{width:100%;justify-content:center}
+  .rel{padding:60px 20px 20px}
+  .rel-grid{grid-template-columns:1fr;gap:20px}
+  .rc-img{height:180px}
+  .blog-ft{padding:44px 20px}
+  .blog-ft-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+
 @media(max-width:900px){
 .nav{padding:0 24px}.nav-links{display:none}
 .breadcrumb{padding:14px 24px}
@@ -294,6 +366,16 @@ a{text-decoration:none;color:inherit}
   </a>
 </nav>
 
+<div class="cat-bar">
+  <div class="cat-bar-in">
+    <a href="/blog.html" class="cat-pill">Todos</a>
+    <a href="/cuanto-cuesta-putting-green-residencial-mexico.html" class="cat-pill active">Inversión</a>
+    <a href="/blog.html" class="cat-pill">Técnica</a>
+    <a href="/blog.html" class="cat-pill">Comparativas</a>
+    <a href="/blog.html" class="cat-pill">Proyectos</a>
+  </div>
+</div>
+
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
     <a href="#">Inicio</a><span>/</span><a href="#">Blog</a><span>/</span>
@@ -335,6 +417,17 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <p>En esta guía rompemos la opacidad típica del mercado: te damos los precios reales de cada modelo, qué incluye una instalación profesional, qué no incluye, y cómo decidir el tamaño ideal para tu jardín.</p>
+
+<div class="tldr">
+  <div class="tldr-h">Lo esencial en 30 segundos</div>
+  <ul class="tldr-list">
+    <li><strong>Desde $23,600 MXN + IVA</strong> el modelo Compact (3 × 4 m, 12 m², 1 hoyo). Es la entrada al producto.</li>
+    <li><strong>El más pedido es Signature</strong> (6 × 10 m, 60 m², 2-3 hoyos) desde $94,000 MXN + IVA.</li>
+    <li><strong>Garantía 9 años</strong> contra decoloración + 2 años sobre instalación. Vida útil real 15+ años.</li>
+    <li><strong>Plusvalía 6-18%</strong> en zonas premium. El green se paga solo con 2-3 años de ahorro en green fees.</li>
+  </ul>
+  <a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20cotizar%20mi%20putting%20green" class="tldr-cta">Cotizar mi green →</a>
+</div>
 
 <h2 id="putting-green-mexico">El putting green residencial en México</h2>
 
@@ -637,6 +730,17 @@ a{text-decoration:none;color:inherit}
 <h3>3. Mejora medible del juego</h3>
 <p>El putt es la zona del juego donde más golpes pierde un golfista amateur. Tener un green disponible 24/7 transforma el "voy a practicar el putt" de una decisión logística a un hábito de 15 minutos diarios. Los clientes reportan mejoras significativas en el porcentaje de putts cortos embocados después de 2 a 3 meses de uso.</p>
 
+<div class="wa-mid">
+  <div class="wa-mid-body">
+    <div class="wa-mid-title">¿Tu jardín califica para un putting green?</div>
+    <p class="wa-mid-desc">Mándanos las medidas de tu espacio por WhatsApp y te confirmamos en menos de 1 hora qué modelo te acomoda y cuánto cuesta. Sin compromiso.</p>
+  </div>
+  <a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20putting%20green%20cabe%20en%20mi%20jard%C3%ADn" class="wa-mid-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
+    Hablar por WhatsApp
+  </a>
+</div>
+
 <h2 id="faq">Preguntas frecuentes sobre putting greens en México</h2>
 
 <div class="faq-section speakable-faq">
@@ -739,6 +843,77 @@ a{text-decoration:none;color:inherit}
         </button>
         <p class="contact-consent">Al enviar, abrirás WhatsApp con tu mensaje listo. No compartimos tus datos.</p>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="rel">
+  <div class="rel-h">También te puede interesar</div>
+  <p class="rel-sub">Más guías editoriales del blog Hole One Greens</p>
+  <div class="rel-grid">
+    <a href="/blog.html" class="rc rc-soon">
+      <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=600&q=85" alt="Putt corto y handicap" class="rc-img">
+      <div class="rc-body">
+        <span class="rc-cat">Próximamente · Técnica</span>
+        <span class="rc-title">El putt corto: el golpe que decide tu handicap</span>
+        <span class="rc-desc">El 80% de los putts son menores a 3 metros. Por qué practicarlos en casa transforma tu juego en 3 meses.</span>
+      </div>
+    </a>
+    <a href="/blog.html" class="rc rc-soon">
+      <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?w=600&q=85" alt="Pasto sintético vs natural" class="rc-img">
+      <div class="rc-body">
+        <span class="rc-cat">Próximamente · Comparativas</span>
+        <span class="rc-title">Sintético vs natural: la decisión correcta</span>
+        <span class="rc-desc">Análisis honesto de costo, mantenimiento y experiencia. Por qué casi nadie elige natural en residencia hoy.</span>
+      </div>
+    </a>
+    <a href="/blog.html" class="rc rc-soon">
+      <img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=600&q=85" alt="Plusvalía putting green" class="rc-img">
+      <div class="rc-body">
+        <span class="rc-cat">Próximamente · Inversión</span>
+        <span class="rc-title">Plusvalía: cuánto suma a tu propiedad</span>
+        <span class="rc-desc">Datos reales de incremento en valor del inmueble en zonas premium al integrar un green residencial.</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="blog-ft">
+  <div class="blog-ft-in">
+    <div class="blog-ft-h">Explora todo el blog</div>
+    <p class="blog-ft-sub">Guías, precios y consejos sobre putting greens residenciales en México</p>
+    <div class="blog-ft-grid">
+      <a href="/cuanto-cuesta-putting-green-residencial-mexico.html" class="bf-card">
+        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&q=85" alt="Costo putting green residencial" class="bf-card-img">
+        <div class="bf-card-body">
+          <span class="bf-card-cat">Inversión</span>
+          <span class="bf-card-title">El costo real de un putting green residencial</span>
+        </div>
+      </a>
+      <a href="/blog.html" class="bf-card bf-card-soon">
+        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&q=85" alt="Putt corto" class="bf-card-img">
+        <div class="bf-card-body">
+          <span class="bf-card-cat">Próximamente · Técnica</span>
+          <span class="bf-card-title">El putt corto: el golpe que decide tu handicap</span>
+        </div>
+      </a>
+      <a href="/blog.html" class="bf-card bf-card-soon">
+        <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?w=400&q=85" alt="Sintético vs natural" class="bf-card-img">
+        <div class="bf-card-body">
+          <span class="bf-card-cat">Próximamente · Comparativas</span>
+          <span class="bf-card-title">Sintético vs natural: la decisión correcta</span>
+        </div>
+      </a>
+      <a href="/blog.html" class="bf-card bf-card-soon">
+        <img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=400&q=85" alt="Plusvalía putting green" class="bf-card-img">
+        <div class="bf-card-body">
+          <span class="bf-card-cat">Próximamente · Inversión</span>
+          <span class="bf-card-title">Plusvalía: cuánto suma a tu propiedad</span>
+        </div>
+      </a>
+    </div>
+    <div class="blog-ft-all">
+      <a href="/blog.html">Ver todos los artículos →</a>
     </div>
   </div>
 </section>
