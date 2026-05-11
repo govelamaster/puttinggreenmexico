@@ -1135,37 +1135,83 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @media (max-width: 640px) {
-  .hero h1 { font-size: 44px; }
-  .hero-sub { font-size: 16px; }
-  .hero-ctas { flex-direction: column; align-items: stretch; gap: 14px; }
+  /* Navbar / logo más compactos */
+  .nav, .nav.scrolled { padding: 12px 20px; }
+  .brand-logo img { height: 44px; }
+  .nav-cta { padding: 9px 16px; font-size: 12px; }
+  .nav-cta svg { width: 12px; height: 12px; }
+
+  /* Hero mobile-first */
+  .hero { min-height: 88vh; }
+  .hero-inner { padding: 90px 20px 56px; min-height: 88vh; }
+  .hero h1 { font-size: 42px; line-height: 1.08; }
+  .hero-sub { font-size: 16px; margin-bottom: 32px; }
+  .hero-kicker { font-size: 11px; padding: 7px 14px; margin-bottom: 22px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; gap: 12px; margin-bottom: 36px; }
   .btn-primary, .btn-gold { width: 100%; justify-content: center; }
-  .btn-line { padding: 14px 0; justify-content: center; }
-  .hero-trust { gap: 14px; }
+  .btn-line { padding: 16px 22px; justify-content: center; width: 100%; }
+  .hero-trust { gap: 14px; padding-top: 28px; }
+  .trust-item { font-size: 13px; }
 
-  .stats-grid { grid-template-columns: 1fr; gap: 24px; }
-  .benefits-grid { grid-template-columns: 1fr; }
+  /* Stats bar 2x2 en mobile (más compacto que 1 columna) */
+  .stats-bar { padding: 32px 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 16px; padding: 0 20px; }
+  .stat { gap: 12px; }
+  .stat-icon { width: 36px; height: 36px; }
+  .stat-icon svg { width: 16px; height: 16px; }
+  .stat-num { font-size: 22px; }
+  .stat-label { font-size: 10.5px; letter-spacing: 0.06em; }
 
-  .gallery-hero-grid { grid-auto-rows: 220px; }
+  /* Section spacing mobile-first */
+  .section { padding: 64px 20px; }
+  .section-head { margin-bottom: 40px; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+  .benefit { padding: 28px 22px 26px; }
+  .benefit-icon { width: 48px; height: 48px; margin-bottom: 20px; }
+  .benefit h3 { font-size: 20px; }
+
+  /* Galería */
+  .gallery-hero { padding: 64px 0; }
+  .gallery-hero-grid { padding: 0 20px; grid-auto-rows: 220px; gap: 12px; }
   .gal-a, .gal-b, .gal-c { grid-column: span 12; grid-row: span 1; }
   .gal-d, .gal-e, .gal-f { grid-column: span 12; grid-row: span 1; }
+  .gal-caption { bottom: 16px; left: 18px; right: 18px; }
+  .gal-caption-title { font-size: 18px; }
 
-  .medidas-grid { grid-template-columns: 1fr; }
+  /* Medidas */
+  .medidas-grid { grid-template-columns: 1fr; gap: 14px; }
   .m1, .m2, .m3, .m4, .m5 { grid-column: span 1; }
 
-  .process-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* Proceso */
+  .process-grid { grid-template-columns: 1fr; gap: 32px; }
 
+  /* CTA banner & coverage */
+  .cta-banner { height: auto; min-height: 380px; padding: 64px 0; }
   .coverage-cities { grid-template-columns: 1fr; }
   .coverage-city:nth-child(2n) { border-right: none; }
   .coverage-city { border-right: none !important; }
 
+  /* Testimonial */
+  .testimonial { padding: 64px 20px; }
   .testimonial blockquote { font-size: 22px; }
   .testimonial-inner::before { font-size: 140px; top: -40px; }
 
-  .faq-item summary { padding: 20px 24px; font-size: 16px; gap: 14px; }
-  .faq-body { padding: 0 24px 20px; font-size: 14px; }
+  /* FAQ */
+  .faq-item summary { padding: 18px 20px; font-size: 15.5px; gap: 12px; }
+  .faq-body { padding: 0 20px 18px; font-size: 14px; line-height: 1.7; }
 
-  .footer-top { grid-template-columns: 1fr; }
+  /* CTA final form */
+  .cta-final { padding: 64px 20px; }
+  .cta-form { padding: 28px 20px; }
+
+  /* Footer */
+  .footer { padding: 48px 20px 24px; }
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+  /* WhatsApp float mobile más discreto */
+  .wa-float { width: 52px; height: 52px; bottom: 20px; right: 20px; }
+  .wa-float svg { width: 24px; height: 24px; }
 
   .wa-float { width: 54px; height: 54px; bottom: 18px; right: 18px; }
 }
