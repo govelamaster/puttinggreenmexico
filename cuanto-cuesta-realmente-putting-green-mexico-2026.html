@@ -298,14 +298,20 @@ a{text-decoration:none;color:inherit}
 .tldr-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;background:var(--cream);border:1px solid var(--ink);border-radius:100px;font-size:13px;font-weight:700;color:var(--ink);transition:all .2s}
 .tldr-cta:hover{background:var(--ink);color:var(--gold-pale)}
 
-.wa-mid{max-width:760px;margin:56px auto;background:var(--ink);padding:36px 40px;display:flex;align-items:center;gap:28px;position:relative;overflow:hidden}
-.wa-mid::before{content:'';position:absolute;top:-40%;right:-10%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(168,196,125,0.12) 0%,transparent 70%)}
+.wa-mid{max-width:780px;margin:64px auto;background:linear-gradient(135deg,#0e1209 0%,#1a2014 50%,#0e1209 100%);border-radius:14px;padding:40px 44px;display:flex;align-items:center;gap:32px;position:relative;overflow:hidden;border:1px solid rgba(168,196,125,0.18);box-shadow:0 20px 60px rgba(14,18,9,0.35)}
+.wa-mid::before{content:'';position:absolute;top:-50%;right:-15%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(168,196,125,0.16) 0%,transparent 65%);pointer-events:none}
+.wa-mid::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold-pale) 0%,var(--gold) 50%,transparent 100%);border-radius:14px 0 0 14px}
 .wa-mid-body{flex:1;position:relative;z-index:2}
-.wa-mid-title{font-family:var(--font-display);font-size:19px;font-weight:800;color:var(--white);line-height:1.25;margin-bottom:6px;letter-spacing:-0.015em}
-.wa-mid-desc{font-size:13.5px;color:rgba(255,255,255,0.62);margin:0;line-height:1.5}
-.wa-mid-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:#25d366;color:var(--white);font-size:13px;font-weight:700;letter-spacing:0.02em;border-radius:100px;white-space:nowrap;position:relative;z-index:2;transition:transform .2s;box-shadow:0 8px 22px rgba(37,211,102,0.32)}
-.wa-mid-btn:hover{transform:translateY(-2px)}
+.wa-mid-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:10.5px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:12px}
+.wa-mid-eyebrow::before{content:'';width:18px;height:1px;background:var(--gold-pale)}
+.wa-mid-title{font-family:var(--font-display);font-size:21px;font-weight:800;color:#fff;line-height:1.22;margin-bottom:10px;letter-spacing:-0.018em}
+.wa-mid-title em{font-style:normal;color:var(--gold-pale);font-weight:800}
+.wa-mid-desc{font-size:14.5px;color:rgba(244,240,225,0.82);margin:0;line-height:1.55;max-width:440px;font-weight:400}
+.wa-mid-btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;background:#25d366;color:#fff;font-family:var(--font-display);font-size:13.5px;font-weight:700;letter-spacing:0.02em;border-radius:100px;white-space:nowrap;position:relative;z-index:2;transition:all .25s ease;box-shadow:0 10px 28px rgba(37,211,102,0.42),0 0 0 1px rgba(255,255,255,0.06) inset}
+.wa-mid-btn:hover{transform:translateY(-2px);background:#1FB957;box-shadow:0 14px 36px rgba(37,211,102,0.52),0 0 0 1px rgba(255,255,255,0.1) inset}
 .wa-mid-btn svg{width:18px;height:18px}
+.wa-mid-trust{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:11.5px;color:rgba(244,240,225,0.5);font-weight:500}
+.wa-mid-trust::before{content:'';width:6px;height:6px;border-radius:50%;background:#25d366;box-shadow:0 0 0 3px rgba(37,211,102,0.2)}
 
 .rel{max-width:1180px;margin:0 auto;padding:80px 48px 24px}
 .rel-h{font-family:var(--font-display);font-size:clamp(28px,3vw,38px);font-weight:800;color:var(--ink);text-align:center;margin-bottom:8px;letter-spacing:-0.02em}
@@ -433,7 +439,7 @@ a{text-decoration:none;color:inherit}
 <article class="art-wrap">
 
 <figure class="art-cover">
-  <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1400&q=85" alt="Putting green residencial premium iluminado de noche en residencia mexicana — precio real México 2026">
+  <img src="/img/hero-putting-green-nocturno.jpg" alt="Putting green residencial premium iluminado de noche en residencia mexicana — precio real México 2026">
   <figcaption>Putting green Signature 60 m² con iluminación nocturna integrada en residencia premium del norte de México. Proyecto entregado en 2025.</figcaption>
 </figure>
 
@@ -598,8 +604,10 @@ a{text-decoration:none;color:inherit}
 
 <div class="wa-mid">
   <div class="wa-mid-body">
-    <div class="wa-mid-title">¿Tu jardín está entre estos tamaños? Mandamos cotización en 1 hora.</div>
-    <p class="wa-mid-desc">Compártenos las medidas exactas por WhatsApp y te confirmamos modelo recomendado, cifra y tiempo de entrega antes de cerrar el día.</p>
+    <div class="wa-mid-eyebrow">Cotización en 1 hora</div>
+    <div class="wa-mid-title">Mándanos las <em>medidas exactas</em> y te confirmamos modelo + precio antes de cerrar el día.</div>
+    <p class="wa-mid-desc">Sin formulario largo. WhatsApp directo con el equipo técnico. Respuesta promedio: 43 minutos en horario laboral.</p>
+    <div class="wa-mid-trust">120+ greens entregados · Garantía 9 años</div>
   </div>
   <a href="https://wa.me/528116296384?text=Hola%2C%20tengo%20las%20medidas%20de%20mi%20jard%C3%ADn%20y%20quiero%20cotizaci%C3%B3n%20en%201%20hora" class="wa-mid-btn">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
@@ -612,7 +620,7 @@ a{text-decoration:none;color:inherit}
 <p>Esta es la sección que ningún competidor publica. El precio por m² no es una cifra plana: varía según el modelo porque las economías de escala benefician a los proyectos grandes. Si solo te importa la cifra por m² para comparar, aquí está. Pero compara con cuidado: lo barato suele incluir menos.</p>
 
 <figure class="art-img-inline">
-  <img src="https://images.unsplash.com/photo-1592919505780-303950717480?w=1400&q=85" alt="Detalle del pasto sintético putting green Hole One Greens — costo por metro cuadrado México">
+  <img src="/img/putting-green-detalle.jpg" alt="Detalle del pasto sintético putting green Hole One Greens — costo por metro cuadrado México">
   <figcaption>Detalle de pasto putting de alto gramaje recién instalado. La textura rizada y la densidad son las que definen el costo real por m², no solo el ancho del rollo.</figcaption>
 </figure>
 
@@ -763,8 +771,10 @@ a{text-decoration:none;color:inherit}
 
 <div class="wa-mid">
   <div class="wa-mid-body">
-    <div class="wa-mid-title">Calcula tu ROI: te lo mandamos por WhatsApp con datos reales de tu zona</div>
-    <p class="wa-mid-desc">Compártenos tu zona y el club al que comparas. Te mandamos cálculo personalizado de ahorro a 3 años y plusvalía estimada con datos del mercado local.</p>
+    <div class="wa-mid-eyebrow">ROI personalizado · Gratis</div>
+    <div class="wa-mid-title">Calculamos tu <em>ahorro a 3 años</em> con datos reales de tu zona.</div>
+    <p class="wa-mid-desc">Compáralo contra la membresía del club al que vas. La mayoría descubre que el green se paga solo en 18-30 meses.</p>
+    <div class="wa-mid-trust">Sin compromiso · Datos del mercado local</div>
   </div>
   <a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20mi%20c%C3%A1lculo%20de%20ROI%20personalizado%20con%20datos%20de%20mi%20zona" class="wa-mid-btn">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
@@ -777,14 +787,14 @@ a{text-decoration:none;color:inherit}
 <p>Estos son tres proyectos entregados con cifras finales reales —no precios "desde", sino el cierre exacto con todas las variables aplicadas. Compartimos rangos por respeto a la privacidad de los clientes, pero las medidas, ubicaciones y configuraciones son tal cual.</p>
 
 <figure class="art-img-inline">
-  <img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=1400&q=85" alt="Vista aérea de residencia premium mexicana con putting green sintético integrado al jardín">
+  <img src="/img/residencia-aerea.jpg" alt="Vista aérea de residencia premium mexicana con putting green sintético integrado al jardín">
   <figcaption>Vista aérea de residencia con putting green Signature integrado al jardín principal. Proyecto entregado en zona residencial premium de Nuevo León.</figcaption>
 </figure>
 
 <div class="case-grid">
 
   <div class="case-card">
-    <img class="case-img" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=85" alt="Putting green premium en residencia de San Pedro Garza García Monterrey">
+    <img class="case-img" src="/img/case-san-pedro.jpg" alt="Putting green premium en residencia de San Pedro Garza García Monterrey">
     <div class="case-body">
       <div class="case-loc">San Pedro Garza García · Monterrey</div>
       <div class="case-title">Residencia familiar con jardín posterior amplio</div>
@@ -795,7 +805,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="case-card">
-    <img class="case-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=85" alt="Putting green compact en terraza de departamento premium en Polanco CDMX">
+    <img class="case-img" src="/img/case-polanco.jpg" alt="Putting green compact en terraza de departamento premium en Polanco CDMX">
     <div class="case-body">
       <div class="case-loc">Polanco · CDMX</div>
       <div class="case-title">Terraza de penthouse con vista a Reforma</div>
@@ -806,7 +816,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="case-card">
-    <img class="case-img" src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&q=85" alt="Putting green grande tipo Estate en residencia premium de Mérida Yucatán">
+    <img class="case-img" src="/img/case-merida.jpg" alt="Putting green grande tipo Estate en residencia premium de Mérida Yucatán">
     <div class="case-body">
       <div class="case-loc">Mérida · Yucatán</div>
       <div class="case-title">Quinta residencial en zona norte con piscina</div>
@@ -825,7 +835,7 @@ a{text-decoration:none;color:inherit}
 <p>El putting green residencial es la mayoría de nuestro pipeline, pero el segmento B2B crece año con año. Empresas, desarrolladores, hoteles boutique y organizadores de eventos están descubriendo que un green sintético es la amenidad premium que diferencia un activo comercial con costo controlable y mantenimiento prácticamente cero.</p>
 
 <figure class="art-img-inline">
-  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85" alt="Putting green corporativo en oficina premium para empresas y eventos en México">
+  <img src="/img/oficina-corporativa.jpg" alt="Putting green corporativo en oficina premium para empresas y eventos en México">
   <figcaption>Putting green compact instalado en zona de wellness corporativo de torre de oficinas premium. La amenidad transforma el espacio común sin requerir mantenimiento operativo.</figcaption>
 </figure>
 
@@ -858,8 +868,10 @@ a{text-decoration:none;color:inherit}
 
 <div class="wa-mid">
   <div class="wa-mid-body">
-    <div class="wa-mid-title">¿Es para tu empresa o desarrollo? Hablemos del proyecto.</div>
-    <p class="wa-mid-desc">Cotización empresarial con facturación A, asesoría de diseño con tu arquitecto y plazos definidos. Atendemos personalmente director general y dirección de operaciones.</p>
+    <div class="wa-mid-eyebrow">Empresa · Desarrollo · Hotel</div>
+    <div class="wa-mid-title">Proyectos B2B con <em>facturación, plazos y arquitecto</em>.</div>
+    <p class="wa-mid-desc">Atendemos personalmente director general y dirección de operaciones. Cotización empresarial completa con timeline y supervisión técnica.</p>
+    <div class="wa-mid-trust">Facturación A · Asesoría con tu arquitecto</div>
   </div>
   <a href="https://wa.me/528116296384?text=Hola%2C%20es%20para%20proyecto%20empresarial%20o%20desarrollo%20inmobiliario.%20Quiero%20cotizar%20putting%20green" class="wa-mid-btn">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
@@ -868,7 +880,7 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <figure class="art-img-inline">
-  <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1400&q=85" alt="Putting green iluminado de noche con bandera y cup — Hole One Greens México 2026">
+  <img src="/img/green-nocturno.jpg" alt="Putting green iluminado de noche con bandera y cup — Hole One Greens México 2026">
   <figcaption>Putting green nocturno con iluminación LED integrada. La textura del pasto putting y el corte del rough definen tanto la estética como la velocidad de rodadura del proyecto.</figcaption>
 </figure>
 
