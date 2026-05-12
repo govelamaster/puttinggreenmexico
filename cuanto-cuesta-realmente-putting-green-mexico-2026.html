@@ -209,15 +209,17 @@ details[open] summary::after{transform:rotate(45deg);color:var(--accent);backgro
 .rc-desc{font-size:12px;color:var(--text-l);line-height:1.4}
 
 /* READING BAR */
-.rbar{position:fixed;bottom:0;left:0;right:0;background:var(--primary);padding:10px 0;z-index:90;transform:translateY(100%);transition:transform .3s;border-top:1px solid rgba(168,196,125,.18)}
+.rbar{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(180deg,#0a0e07 0%,#141a10 100%);padding:14px 0;z-index:90;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);border-top:1px solid rgba(168,196,125,.16);box-shadow:0 -10px 40px rgba(10,14,7,.45)}
 .rbar.show{transform:translateY(0)}
-.rbar-in{display:flex;align-items:center;justify-content:space-between;width:min(100% - 48px,820px);margin-inline:auto;gap:12px}
-.rbar-back{color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
-.rbar-back:hover{color:var(--accent);text-decoration:none}
-.rbar-links{display:flex;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1}
+.rbar-in{display:flex;align-items:center;justify-content:space-between;width:min(100% - 48px,820px);margin-inline:auto;gap:16px;padding-right:80px}
+.rbar-back{color:#fff;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;flex-shrink:0;padding:8px 16px;background:rgba(168,196,125,.1);border:1px solid rgba(168,196,125,.22);border-radius:999px;transition:all .2s}
+.rbar-back:hover{color:var(--accent);background:rgba(168,196,125,.18);border-color:rgba(168,196,125,.4);text-decoration:none}
+.rbar-back::before{content:"\2190";font-size:14px;line-height:1;display:inline-block}
+.rbar-links{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;margin-left:8px}
 .rbar-links::-webkit-scrollbar{display:none}
-.rbar-links a{font-size:11px;color:rgba(255,255,255,.45);white-space:nowrap;font-weight:600;transition:color .15s;padding:4px 0}
-.rbar-links a:hover,.rbar-links a.active{color:var(--accent);text-decoration:none}
+.rbar-links a{font-size:12px;color:rgba(255,255,255,.58);white-space:nowrap;font-weight:600;transition:all .2s;padding:7px 12px;border-radius:999px;letter-spacing:.01em}
+.rbar-links a:hover{color:var(--accent);background:rgba(168,196,125,.08);text-decoration:none}
+.rbar-links a.active{color:var(--primary);background:var(--accent);text-decoration:none}
 
 /* FOOTER */
 footer{background:var(--secondary);color:rgba(255,255,255,.7);padding:40px 0 20px;text-align:center;font-size:13px}
@@ -229,10 +231,13 @@ footer p{color:rgba(255,255,255,.5)}
 .ft-links a:hover{color:var(--accent);text-decoration:none}
 
 /* WA FLOAT */
-.waf{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(37,211,102,.4);z-index:50;animation:wap 2.6s ease-in-out infinite;transition:transform .2s;text-decoration:none}
+.waf{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(37,211,102,.4);z-index:95;animation:wap 2.6s ease-in-out infinite;transition:bottom .35s cubic-bezier(.2,.8,.2,1),transform .2s;text-decoration:none}
 .waf:hover{transform:scale(1.08)}
 .waf svg{width:30px;height:30px;fill:#fff}
 @keyframes wap{0%,100%{box-shadow:0 10px 28px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.6)}50%{box-shadow:0 10px 28px rgba(37,211,102,.4),0 0 0 16px rgba(37,211,102,0)}}
+/* When reading bar is visible, lift WhatsApp float to avoid overlap */
+body.rbar-on .waf{bottom:92px}
+body:has(.rbar.show) .waf{bottom:92px}
 
 /* MOBILE */
 @media(max-width:480px){
@@ -291,6 +296,24 @@ footer p{color:rgba(255,255,255,.5)}
 .blog-il{display:flex;gap:16px;padding:16px;border-radius:16px;background:var(--bg-cream);border:1px solid var(--border);text-decoration:none;margin:32px 0;transition:all .2s}.blog-il:hover{border-color:var(--primary);box-shadow:0 4px 12px rgba(0,0,0,.06);transform:translateY(-2px)}.blog-il-img{width:120px;min-height:90px;object-fit:cover;border-radius:8px;flex:none}@media(max-width:500px){.blog-il-img{width:90px;min-height:70px}}.blog-il-body{flex:1;min-width:0}.blog-il-kicker{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--green);margin-bottom:4px}.blog-il-kicker::before{content:"● ";font-size:8px}.blog-il-title{display:block;font-size:15px;font-weight:700;color:var(--primary);line-height:1.3;margin-bottom:4px}.blog-il-desc{display:block;font-size:12px;color:var(--text-l);line-height:1.4}
 .wa-mid{background:var(--primary);border-radius:16px;padding:32px;margin:32px 0;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden}.wa-mid::before{content:'';position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(168,196,125,.10) 0%,transparent 70%);border-radius:50%}.wa-mid-body{flex:1;min-width:200px;position:relative;z-index:1}.wa-mid-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px}.wa-mid-desc{font-size:13px;color:rgba(255,255,255,.65);margin:0}.wa-mid-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;box-shadow:0 4px 14px rgba(37,211,102,.3);white-space:nowrap}.wa-mid-btn:hover{transform:translateY(-2px)}@media(max-width:600px){.wa-mid{flex-direction:column;text-align:center}.wa-mid-btn{width:100%;justify-content:center}}
 .blog-ft{background:var(--bg-cream);border-top:1px solid var(--border);padding:48px 0;margin-top:32px}.blog-ft-h{font-size:20px;font-weight:800;color:var(--primary);text-align:center;margin-bottom:8px}.blog-ft-sub{font-size:14px;color:var(--text-l);text-align:center;margin-bottom:28px}.blog-ft-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}@media(max-width:768px){.blog-ft-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.blog-ft-grid{grid-template-columns:1fr}}.bf-card{text-decoration:none;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:all .2s}.bf-card:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.08)}.bf-card-img{width:100%;height:110px;object-fit:cover}@media(max-width:500px){.bf-card-img{height:90px}}.bf-card-body{padding:12px}.bf-card-cat{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--green);margin-bottom:4px}.bf-card-cat::before{content:"● ";font-size:7px}.bf-card-title{display:block;font-size:13px;font-weight:700;color:var(--primary);line-height:1.3}.blog-ft-all{text-align:center;margin-top:20px}.blog-ft-all a{display:inline-block;padding:10px 28px;border:1px solid var(--border);border-radius:999px;font-size:13px;font-weight:600;color:var(--primary);text-decoration:none;transition:all .2s}.blog-ft-all a:hover{background:var(--primary);color:#fff}
+
+/* H-BANNER — horizontal pause banner */
+.h-banner{position:relative;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;min-height:150px;border-radius:18px;overflow:hidden;margin:36px 0;background-color:#141a10;background-image:linear-gradient(105deg,rgba(20,26,16,.88) 0%,rgba(20,26,16,.58) 60%,rgba(20,26,16,.22) 100%),var(--bg-img,none);background-size:cover;background-position:center;padding:26px 34px;color:#fff;text-decoration:none!important;transition:transform .3s,box-shadow .3s,filter .3s;border:1px solid rgba(168,196,125,.12)}
+.h-banner:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.28);text-decoration:none}
+.h-banner:hover .h-banner-bg{filter:brightness(1.08)}
+.h-banner-eyebrow{font-family:var(--font-d);font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:inline-block}
+.h-banner-title{font-family:var(--font-d);font-size:clamp(17px,2.2vw,22px);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.015em;max-width:560px;margin:0}
+.h-banner-title em{font-style:normal;color:var(--accent);font-weight:800}
+.h-banner-cta{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff!important;padding:13px 24px;border-radius:999px;font-family:var(--font-d);font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 6px 18px rgba(37,211,102,.34);text-decoration:none!important;transition:transform .2s,box-shadow .2s}
+.h-banner-cta:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(37,211,102,.45)}
+.h-banner-cta svg{width:14px;height:14px;flex:none}
+@media(max-width:600px){.h-banner{grid-template-columns:1fr;padding:22px;min-height:0;gap:16px}.h-banner-cta{justify-self:start}}
+
+/* INLINE-PHOTO — subtle breathing pause */
+.inline-photo{margin:28px 0;border-radius:14px;overflow:hidden;position:relative}
+.inline-photo img{width:100%;aspect-ratio:21/9;object-fit:cover;display:block;border-radius:14px}
+.inline-photo-cap{font-size:12px;color:var(--text-l);text-align:center;margin-top:10px;font-style:italic;letter-spacing:.01em;padding:0 8px}
+@media(max-width:600px){.inline-photo img{aspect-ratio:16/9}}
 
 /* BP — banner premium */
 .bp{position:relative;border-radius:24px;overflow:hidden;margin:48px 0;background:#0b1009;padding:36px 40px;border:1px solid rgba(168,196,125,.10);box-shadow:0 30px 60px rgba(0,0,0,.45)}
@@ -477,6 +500,12 @@ footer p{color:rgba(255,255,255,.5)}
 
 <p>En Hole One Greens hemos instalado más de <strong>120 putting greens premium</strong> en residencias, oficinas, fraccionamientos y clubes de toda la República. Conocemos el costo real de cada metro cuadrado, las variables ocultas que disparan la cifra final, y el error de presupuesto que cometen quienes solo comparan el precio del pasto. Este artículo es la guía honesta que nos hubiera gustado encontrar nosotros cuando empezamos a vender.</p>
 
+<!-- INLINE-PHOTO #1 — panorámica daytime -->
+<div class="inline-photo">
+  <img src="/img/art2-aerial-residencia.png" alt="Vista aérea panorámica de residencia premium mexicana con putting green integrado al jardín" loading="lazy">
+  <div class="inline-photo-cap">Putting green Signature integrado al jardín de una residencia premium en zona norte de México.</div>
+</div>
+
 <div class="dc"><span class="n">$23,600</span><span class="l"><strong style="color:var(--primary)">MXN — Punto de entrada 2026.</strong> Modelo Compact, 12 m², 1 hoyo, instalación profesional incluida (+ IVA).</span></div>
 
 <p>No vendemos kits. No vendemos rollos sueltos. Vendemos proyecto entregado: pasto importado, rough perimetral, instalación profesional, cups, banderas y garantía 9 años. La cifra que ves es la cifra que pagas. Lo único que cambia entre cliente y cliente son las variables que enumeramos en este artículo.</p>
@@ -510,6 +539,15 @@ footer p{color:rgba(255,255,255,.5)}
 
 <p>Dos jardines con la misma superficie pueden tener cotizaciones que difieren en $40,000 o $60,000 MXN, y eso no significa que un proveedor sea más caro o más barato: significa que las variables del proyecto son distintas. Estas son las siete que mueven la cifra final. Sin ellas, cualquier precio que recibas es solo un número de referencia.</p>
 
+<!-- H-BANNER #1 -->
+<a href="https://wa.me/528116296384?text=Hola%2C%20mi%20jard%C3%ADn%20no%20necesita%20alberca.%20Quiero%20cotizar%20un%20putting%20green" class="h-banner" style="--bg-img:url('/img/art2-pool-vs-green.png');background-image:linear-gradient(105deg,rgba(20,26,16,.88) 0%,rgba(20,26,16,.58) 60%,rgba(20,26,16,.22) 100%),url('/img/art2-pool-vs-green.png')" target="_blank" rel="noopener">
+  <div>
+    <span class="h-banner-eyebrow">Para tu jardín</span>
+    <h3 class="h-banner-title">Tu jardín no necesita una alberca. <em>Necesita un green.</em></h3>
+  </div>
+  <span class="h-banner-cta">Cotizar mi green<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+</a>
+
 <div class="hl"><h3>Las 7 variables que mueven la cifra final</h3><ul><li><strong>Tamaño total en m²:</strong> a mayor superficie, menor costo por m². El Compact cuesta $1,967/m², el Club cuesta $1,217/m².</li><li><strong>Forma del green:</strong> rectangular se corta en línea recta. Una forma orgánica con curvas requiere cortes precisos y más horas de costuras.</li><li><strong>Cantidad de cups y banderas:</strong> uno basta para el putt corto. Cuatro o cinco permiten armar mini-recorridos.</li><li><strong>Ondulaciones y breaks:</strong> un green plano se instala más rápido. Con breaks suaves reproduce dificultad de campo real.</li><li><strong>Rough landscape perimetral:</strong> el contraste pasto putting vs rough es lo que hace que se vea profesional.</li><li><strong>Ubicación geográfica:</strong> Monterrey y CDMX son base; Riviera Maya, Mérida, Cabos y Valle de Bravo suman logística.</li><li><strong>Adicionales:</strong> bunkers, iluminación nocturna LED, tee mat profesional, fringe extendido, drenaje reforzado.</li></ul></div>
 
 <div class="art-img"><img src="/img/putting-green-detalle.jpg" alt="Detalle del pasto sintético putting green Hole One Greens — costo por metro cuadrado México" width="800" height="450" loading="lazy"></div>
@@ -535,6 +573,15 @@ footer p{color:rgba(255,255,255,.5)}
 
 <p>El <strong>Signature de 60 m²</strong> es el sweet spot del catálogo: el 47% de las residencias premium que cotizan con nosotros lo eligen. Es el tamaño más solicitado en San Pedro, Polanco y Bosque Real porque permite breaks variados, approach corto, fringe completo y rotar entre tres hoyos sin que se sienta repetitivo.</p>
 
+<!-- H-BANNER #2 — Signature 60m² -->
+<a href="https://wa.me/528116296384?text=Hola%2C%20me%20interesa%20el%20modelo%20Signature%20de%2060%20m%C2%B2" class="h-banner" style="background-image:linear-gradient(105deg,rgba(20,26,16,.88) 0%,rgba(20,26,16,.58) 60%,rgba(20,26,16,.22) 100%),url('/img/art2-layouts-topdown.png')" target="_blank" rel="noopener">
+  <div>
+    <span class="h-banner-eyebrow">El más pedido</span>
+    <h3 class="h-banner-title">El green más pedido cabe en <em>60 m²</em>.</h3>
+  </div>
+  <span class="h-banner-cta">Ver Signature<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+</a>
+
 <div class="dg"><div class="dg-i"><span class="v">$1,967</span><span class="lb">Compact / m²</span></div><div class="dg-i"><span class="v">$1,625</span><span class="lb">Urban / m²</span></div><div class="dg-i"><span class="v">$1,567</span><span class="lb">Signature / m²</span></div><div class="dg-i"><span class="v">$1,217</span><span class="lb">Club / m²</span></div></div>
 
 <p><strong>Honestidad sobre los "desde":</strong> los precios son el punto de partida para cada modelo en su configuración estándar. La cifra final depende de las 7 variables que enumeramos arriba. Lo que no cambia: lo que incluye cada proyecto y la garantía 9 años.</p>
@@ -559,11 +606,26 @@ footer p{color:rgba(255,255,255,.5)}
 
 <p>La diferencia entre el costo por m² del Compact y el del Club es de $750/m². Esto no es porque el Compact tenga mejor material —es exactamente el mismo pasto importado, las mismas costuras, la misma garantía. <strong>Lo que cambia es que el costo fijo de movilizar al equipo, instalar, cortar y dejar terminado se distribuye sobre menos m².</strong> Por eso un Compact tiene mejor sentido emocional que económico, y un Club es ridículamente eficiente si tienes el jardín que lo soporta.</p>
 
+<!-- H-BANNER #3 — Compact 48h -->
+<a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20empezar%20con%20el%20Compact%20de%20%2423%2C600%20MXN" class="h-banner" style="background-image:linear-gradient(105deg,rgba(20,26,16,.88) 0%,rgba(20,26,16,.58) 60%,rgba(20,26,16,.22) 100%),url('/img/art3-setup-budget.png')" target="_blank" rel="noopener">
+  <div>
+    <span class="h-banner-eyebrow">Punto de entrada</span>
+    <h3 class="h-banner-title">$23,600 MXN. <em>Listo para usar en 48 horas.</em></h3>
+  </div>
+  <span class="h-banner-cta">Empezar Compact<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+</a>
+
 <div class="dc"><span class="n">$1,429</span><span class="l"><strong style="color:var(--primary)">El sweet spot: Estate, 126 m².</strong> La mejor relación inversión-aprovechamiento para residencias con jardín amplio. Si tu jardín no llega, el Signature sigue siendo el que mejor balance entrega.</span></div>
 
 <h2 id="que-incluye">Qué incluye el precio (y qué NO incluye)</h2>
 
 <p>El error de presupuesto más frecuente en este nicho es comparar cotizaciones sin revisar el alcance. Una cotización de $14,000 MXN por un Compact existe en el mercado, pero no incluye instalación profesional, no incluye rough perimetral, no garantiza decoloración y a los 18 meses te toca rehacer todo. Aquí está la separación honesta de lo que entregamos y lo que no.</p>
+
+<!-- INLINE-PHOTO #2 — texture detail wide -->
+<div class="inline-photo">
+  <img src="/img/art3-green-outdoor.png" alt="Detalle panorámico del pasto sintético putting recién instalado con rough perimetral" loading="lazy">
+  <div class="inline-photo-cap">Pasto putting de alto gramaje y rough perimetral: la combinación que define la durabilidad real del proyecto.</div>
+</div>
 
 <div class="hl"><h3>Lo que SÍ incluye el precio</h3><ul><li><strong>Pasto sintético putting importado</strong> texturizado rizado, alto gramaje, antibacterial UV.</li><li><strong>Pasto landscape (rough) perimetral</strong> para contraste estético profesional.</li><li><strong>Instalación profesional</strong> con costuras invisibles y cortes precisos por equipo propio.</li><li><strong>Cups regulación PGA</strong> instalados al ras según el modelo.</li><li><strong>Banderas premium</strong> incluidas según número de hoyos.</li><li><strong>Garantía 9 años escrita</strong> contra decoloración del pasto.</li><li><strong>Garantía 2 años escrita</strong> sobre la mano de obra de instalación.</li><li><strong>Asesoría de diseño previa</strong> al proyecto sin costo adicional.</li></ul></div>
 
@@ -576,6 +638,15 @@ footer p{color:rgba(255,255,255,.5)}
 <p>Esta es la pregunta que el cliente piensa pero rara vez pronuncia en voz alta: <strong>"¿se justifica esta inversión?"</strong>. La respuesta corta es sí. La larga la desarrollamos aquí con cifras de mercado.</p>
 
 <p>Una membresía premium en un club de golf mexicano —Bosques de San Isidro en Monterrey, Bosque Real, Club Campestre CDMX, Mayakoba en Riviera Maya— cuesta entre $80,000 y $250,000 MXN anuales solo por la cuota de mantenimiento, sin contar inscripción inicial (que va de $400,000 a $2,500,000 MXN). Si solo usas la membresía para practicar el juego corto una o dos veces por semana, estás pagando una fortuna por una conveniencia limitada por horarios, reservaciones y desplazamientos.</p>
+
+<!-- H-BANNER #4 — ROI -->
+<a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20calcular%20mi%20ROI%20vs%20membres%C3%ADa%20de%20club" class="h-banner" style="background-image:linear-gradient(105deg,rgba(20,26,16,.88) 0%,rgba(20,26,16,.58) 60%,rgba(20,26,16,.22) 100%),url('/img/case-polanco.jpg')" target="_blank" rel="noopener">
+  <div>
+    <span class="h-banner-eyebrow">Análisis de inversión</span>
+    <h3 class="h-banner-title">Una membresía premium = <em>un green pagado en 3 años.</em></h3>
+  </div>
+  <span class="h-banner-cta">Calcular mi ROI<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+</a>
 
 <div class="dg"><div class="dg-i"><span class="v">$240K+</span><span class="lb">Ahorro a 3 años</span></div><div class="dg-i"><span class="v">+255%</span><span class="lb">ROI real 3 años</span></div><div class="dg-i"><span class="v">+18%</span><span class="lb">Plusvalía San Pedro</span></div><div class="dg-i"><span class="v">24/7</span><span class="lb">Disponibilidad</span></div></div>
 
@@ -600,6 +671,15 @@ footer p{color:rgba(255,255,255,.5)}
 <h2 id="casos-reales">Casos reales: 3 instalaciones premium con precio final</h2>
 
 <p>Estos son tres proyectos entregados con cifras finales reales —no precios "desde", sino el cierre exacto con todas las variables aplicadas. Compartimos rangos por respeto a la privacidad de los clientes, pero las medidas, ubicaciones y configuraciones son tal cual.</p>
+
+<!-- H-BANNER #5 — San Pedro -->
+<a href="https://wa.me/528116296384?text=Hola%2C%20quiero%20hablar%20con%20un%20experto%20sobre%20mi%20proyecto" class="h-banner" style="background-image:linear-gradient(105deg,rgba(20,26,16,.88) 0%,rgba(20,26,16,.58) 60%,rgba(20,26,16,.22) 100%),url('/img/art2-case-san-pedro.png')" target="_blank" rel="noopener">
+  <div>
+    <span class="h-banner-eyebrow">Casos reales</span>
+    <h3 class="h-banner-title">Mi mejor cliente vive en San Pedro. <em>Tal vez tú también.</em></h3>
+  </div>
+  <span class="h-banner-cta">Hablar con un experto<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+</a>
 
 <div class="art-img"><img src="/img/residencia-aerea.jpg" alt="Vista aérea de residencia premium con putting green sintético integrado al jardín" width="800" height="450" loading="lazy"></div>
 <p class="ic">Vista aérea de residencia con putting green Signature integrado al jardín principal. Proyecto entregado en zona residencial premium de Nuevo León.</p>
@@ -641,6 +721,12 @@ footer p{color:rgba(255,255,255,.5)}
 <div class="tw"><table><caption>Las 4 verticales B2B donde más demanda recibimos</caption><thead><tr><th>Vertical</th><th>Modelo típico</th><th>Inversión</th><th>Beneficio clave</th></tr></thead><tbody><tr><td>Oficinas ejecutivas</td><td>Compact / Urban</td><td>$23K-50K MXN</td><td>Retención de talento senior</td></tr><tr><td>Eventos empresariales</td><td>Portátil / setup express</td><td>Renta o compra</td><td>Activaciones de marca premium</td></tr><tr><td>Fraccionamientos / condominios</td><td>Signature / Estate / Club</td><td>$94K-365K MXN</td><td>Diferenciador en preventa</td></tr><tr><td>Hoteles boutique / resorts</td><td>Signature / Estate</td><td>$94K-180K MXN</td><td>Amenidad de huésped sin operación</td></tr></tbody></table></div>
 
 <p>Para proyectos B2B trabajamos con cotización personalizada que incluye facturación A, opciones de pago a meses sin intereses para personas morales, y posibilidad de integración con el plan paisajístico general del desarrollo. La diferencia con el flujo residencial es que aquí la conversación incluye al director de operaciones, al desarrollador y al despacho de arquitectura.</p>
+
+<!-- INLINE-PHOTO #3 — B2B office -->
+<div class="inline-photo">
+  <img src="/img/art3-b2b-oficina.png" alt="Putting green corporativo en zona de wellness de oficinas premium en México" loading="lazy">
+  <div class="inline-photo-cap">Amenidad corporativa instalada en zona de descanso ejecutiva. Cero mantenimiento operativo, retención de talento senior.</div>
+</div>
 
 <div class="dc"><span class="n">+12%</span><span class="l"><strong style="color:var(--primary)">Caso reciente Querétaro:</strong> instalamos un Signature de 60 m² en la amenidad común de un fraccionamiento residencial premium. El desarrollador reportó incremento del 12% en velocidad de venta de las casas con vista al green durante el primer trimestre posterior a la entrega.</span></div>
 
@@ -776,7 +862,7 @@ sl=document.querySelectorAll('.rbar-links a'),ss=document.querySelectorAll('arti
 window.addEventListener('scroll',function(){
   const st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;
   pb.style.width=Math.min((st/dh)*100,100)+'%';
-  if(st>400)rb.classList.add('show');else rb.classList.remove('show');
+  if(st>400){rb.classList.add('show');document.body.classList.add('rbar-on')}else{rb.classList.remove('show');document.body.classList.remove('rbar-on')}
   let c='';ss.forEach(function(s){if(st>=s.offsetTop-120)c=s.id});
   sl.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+c)});
 },{passive:true});
