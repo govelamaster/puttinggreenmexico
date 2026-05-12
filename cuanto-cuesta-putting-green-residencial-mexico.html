@@ -269,41 +269,55 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 .tag{padding:7px 14px;border:1.5px solid var(--cream-dark);border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.04em;color:var(--ink-soft);transition:all .2s}
 .tag:hover{border-color:var(--moss);color:var(--moss)}
 
-.contact-section{background:radial-gradient(circle at 15% 30%,rgba(201,169,74,0.12) 0%,transparent 55%),radial-gradient(circle at 85% 70%,rgba(123,162,63,0.10) 0%,transparent 55%),linear-gradient(135deg,#1a2613 0%,#0f1709 100%);position:relative;overflow:hidden;border-top:1px solid rgba(224,200,120,0.15)}
-.contact-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(224,200,120,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(224,200,120,0.035) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-.contact-inner{max-width:1200px;margin:0 auto;padding:88px 48px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;position:relative;z-index:2}
-.contact-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-.contact-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
-.contact-title{font-family:var(--font-display);font-size:clamp(32px,3.5vw,46px);font-weight:400;line-height:1.05;letter-spacing:-0.01em;color:var(--white);margin-bottom:20px}
-.contact-sub{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:480px;margin-bottom:48px}
-.contact-trust{display:flex;align-items:center;gap:24px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}
-.contact-trust-item{display:flex;flex-direction:column;gap:6px}
-.contact-trust-num{font-family:var(--font-display);font-size:36px;font-weight:700;color:var(--gold-pale);line-height:1;letter-spacing:-0.02em;}
-.contact-trust-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);line-height:1.5}
-.contact-trust-divider{width:1px;height:36px;background:rgba(224,200,120,0.2)}
-.contact-right{background:rgba(255,255,255,0.03);border:1px solid rgba(224,200,120,0.18);backdrop-filter:blur(8px);padding:40px 36px;border-radius:2px;position:relative}
-.contact-right::before,.contact-right::after{content:'';position:absolute;width:20px;height:20px;border:1px solid var(--gold)}
-.contact-right::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
-.contact-right::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
-.contact-form{display:flex;flex-direction:column;gap:22px}
+/* === CONTACT SECTION — premium redesign (Stripe/Linear/Apple Pay inspired) === */
+.contact-section{position:relative;overflow:hidden;border-top:1px solid rgba(168,196,125,0.18);background:linear-gradient(160deg,#1c2716 0%,#141a10 48%,#0c1107 100%)}
+.contact-section::before{content:'';position:absolute;top:-22%;right:-12%;width:62%;height:90%;background:radial-gradient(circle at 50% 50%,rgba(168,196,125,0.22) 0%,rgba(168,196,125,0.06) 38%,transparent 68%);pointer-events:none;z-index:0}
+.contact-section::after{content:'';position:absolute;bottom:-28%;left:-14%;width:58%;height:80%;background:radial-gradient(circle at 50% 50%,rgba(123,162,63,0.18) 0%,rgba(123,162,63,0.05) 40%,transparent 70%);pointer-events:none;z-index:0}
+.contact-inner{max-width:1200px;margin:0 auto;padding:104px 48px;display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:start;position:relative;z-index:2}
+
+/* LEFT column */
+.contact-left{position:relative}
+.contact-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-pale);padding:7px 14px 7px 12px;background:rgba(168,196,125,0.12);border:1px solid rgba(168,196,125,0.32);border-radius:999px;margin-bottom:26px;backdrop-filter:blur(4px)}
+.contact-eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:#a8c47d;box-shadow:0 0 0 3px rgba(168,196,125,0.22),0 0 12px rgba(168,196,125,0.6);animation:contactPulse 2.4s ease-in-out infinite}
+@keyframes contactPulse{0%,100%{box-shadow:0 0 0 3px rgba(168,196,125,0.22),0 0 12px rgba(168,196,125,0.6)}50%{box-shadow:0 0 0 5px rgba(168,196,125,0.08),0 0 18px rgba(168,196,125,0.9)}}
+.contact-title{font-family:var(--font-display);font-size:clamp(34px,3.6vw,48px);font-weight:600;line-height:1.04;letter-spacing:-0.018em;color:var(--white);margin-bottom:22px}
+.contact-title em{font-style:normal;color:var(--gold-pale);font-weight:700;background:linear-gradient(135deg,#cfe09f 0%,#a8c47d 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.contact-sub{font-size:16.5px;color:rgba(255,255,255,0.72);line-height:1.65;max-width:480px;margin-bottom:48px}
+
+/* Trust stat cards */
+.contact-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-top:36px;border-top:1px solid rgba(168,196,125,0.18)}
+.contact-trust-item{position:relative;display:flex;flex-direction:column;gap:8px;padding:18px 16px 18px 18px;background:linear-gradient(135deg,rgba(168,196,125,0.07) 0%,rgba(168,196,125,0.02) 100%);border:1px solid rgba(168,196,125,0.14);border-left:3px solid var(--gold-pale);border-radius:12px;transition:all .3s ease}
+.contact-trust-item:hover{background:linear-gradient(135deg,rgba(168,196,125,0.12) 0%,rgba(168,196,125,0.04) 100%);border-color:rgba(168,196,125,0.28);border-left-color:#cfe09f;transform:translateY(-2px)}
+.contact-trust-num{font-family:var(--font-display);font-size:34px;font-weight:700;color:var(--white);line-height:1;letter-spacing:-0.025em;background:linear-gradient(135deg,#ffffff 0%,#cfe09f 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.contact-trust-label{font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.72);line-height:1.45}
+
+/* RIGHT column — form card */
+.contact-right{position:relative;padding:44px 40px 38px;border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,0.045) 0%,rgba(168,196,125,0.05) 50%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(168,196,125,0.22);box-shadow:0 30px 80px -20px rgba(0,0,0,0.55),0 0 0 1px rgba(168,196,125,0.04),inset 0 1px 0 rgba(255,255,255,0.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.contact-right::before{content:'';position:absolute;top:0;left:24px;right:24px;height:3px;background:linear-gradient(90deg,transparent 0%,#a8c47d 25%,#cfe09f 50%,#a8c47d 75%,transparent 100%);border-radius:0 0 4px 4px;box-shadow:0 0 24px rgba(168,196,125,0.45)}
+.contact-form{display:flex;flex-direction:column;gap:18px}
 .contact-field{display:flex;flex-direction:column;gap:8px}
-.contact-field label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-pale)}
-.contact-field input,.contact-field textarea,.contact-field select{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.2);padding:10px 0;font-family:var(--font-body);font-size:15.5px;color:var(--white);transition:border-color .25s ease;resize:none;width:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0}
-.contact-field select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a9a4c' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 4px center;padding-right:24px}
-.contact-field select option{background:#0e0e0c;color:#faf8f3}
-.contact-field input::placeholder,.contact-field textarea::placeholder{color:rgba(255,255,255,0.3);font-weight:400}
-.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{outline:none;border-bottom-color:var(--gold)}
-.contact-hint{font-size:11.5px;color:rgba(255,255,255,0.4);font-style:normal;margin-top:2px}
-.contact-submit{display:inline-flex;align-items:center;justify-content:center;gap:14px;margin-top:8px;padding:18px 28px;background:var(--white);color:var(--ink);border:none;cursor:pointer;font-family:var(--font-body);font-size:14px;font-weight:600;letter-spacing:0.04em;border-radius:4px;box-shadow:0 12px 40px rgba(0,0,0,0.25);transition:all .3s ease;position:relative;overflow:hidden;width:100%}
-.contact-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#25d366 0%,#128c7e 100%);transform:translateY(101%);transition:transform .35s ease;z-index:0}
-.contact-submit > *{position:relative;z-index:1;transition:color .3s ease}
-.contact-submit:hover{box-shadow:0 16px 48px rgba(37,211,102,0.4);transform:translateY(-2px)}
-.contact-submit:hover > *{color:var(--white)}
-.contact-submit svg:first-of-type{width:20px;height:20px;color:#25d366;transition:color .3s ease}
-.contact-submit:hover svg:first-of-type{color:var(--white)}
-.contact-arrow{width:14px;height:14px;transition:transform .3s ease}
-.contact-submit:hover .contact-arrow{transform:translateX(3px)}
-.contact-consent{font-size:12px;color:rgba(255,255,255,0.4);text-align:center;line-height:1.5;margin-top:6px}
+.contact-field label{font-family:var(--font-display);font-size:10.5px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-pale)}
+.contact-field input,.contact-field textarea,.contact-field select{background:rgba(168,196,125,0.06);border:1px solid rgba(168,196,125,0.22);padding:14px 16px;font-family:var(--font-body);font-size:15.5px;font-weight:500;color:var(--white);transition:all .22s ease;resize:none;width:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:10px;min-height:48px}
+.contact-field select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23cfe09f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+.contact-field select option{background:#141a10;color:#faf8f3;padding:8px}
+.contact-field input::placeholder,.contact-field textarea::placeholder{color:rgba(255,255,255,0.6);font-weight:400}
+.contact-field input:hover,.contact-field textarea:hover,.contact-field select:hover{background:rgba(168,196,125,0.09);border-color:rgba(168,196,125,0.36)}
+.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{outline:none;background:rgba(168,196,125,0.10);border-color:var(--gold-pale);box-shadow:0 0 0 4px rgba(168,196,125,0.16)}
+.contact-hint{font-size:11.5px;color:rgba(255,255,255,0.45);font-style:normal;margin-top:2px}
+
+/* SUBMIT — WhatsApp green pill, premium depth */
+.contact-submit{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;padding:0 28px;height:58px;background:linear-gradient(135deg,#25d366 0%,#1ebe5d 60%,#128c7e 100%);color:#fff;border:none;cursor:pointer;font-family:var(--font-display);font-size:15px;font-weight:800;letter-spacing:0.005em;border-radius:999px;box-shadow:0 14px 36px -6px rgba(37,211,102,0.5),0 4px 12px rgba(37,211,102,0.28),inset 0 1px 0 rgba(255,255,255,0.28);transition:all .28s cubic-bezier(.2,.7,.2,1);position:relative;overflow:hidden;width:100%}
+.contact-submit::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.18) 0%,transparent 50%);transform:translateY(0);transition:opacity .35s ease;z-index:0;opacity:0}
+.contact-submit > *{position:relative;z-index:1}
+.contact-submit:hover{transform:translateY(-2px);box-shadow:0 20px 48px -6px rgba(37,211,102,0.62),0 6px 16px rgba(37,211,102,0.35),inset 0 1px 0 rgba(255,255,255,0.34)}
+.contact-submit:hover::before{opacity:1}
+.contact-submit:active{transform:translateY(0);box-shadow:0 8px 22px -4px rgba(37,211,102,0.5),inset 0 1px 0 rgba(255,255,255,0.2)}
+.contact-arrow{width:16px;height:16px;transition:transform .3s ease}
+.contact-submit:hover .contact-arrow{transform:translateX(4px)}
+
+/* Consent line with glowing dot */
+.contact-consent{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,0.62);text-align:center;line-height:1.5;margin-top:14px;font-weight:500}
+.contact-consent::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#25d366;box-shadow:0 0 0 2px rgba(37,211,102,0.18),0 0 10px rgba(37,211,102,0.7);flex:none}
 
 .footer-mini{background:var(--ink);color:rgba(255,255,255,0.45);text-align:center;padding:24px;font-size:12.5px;letter-spacing:0.04em}
 .footer-mini strong{color:var(--gold-pale);font-weight:600}
@@ -382,9 +396,19 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
   .chart-bar-track{height:32px}
   .chart-bar-value{text-align:left}
   .comp-table{font-size:13px}.comp-table th,.comp-table td{padding:12px}
-  .contact-inner{grid-template-columns:1fr;gap:48px;padding:64px 24px}
-  .contact-trust{gap:14px;flex-wrap:wrap}.contact-trust-num{font-size:28px}
-  .contact-right{padding:32px 24px}
+  .contact-inner{grid-template-columns:1fr;gap:44px;padding:72px 22px}
+  .contact-title{font-size:clamp(28px,7.2vw,36px)}
+  .contact-sub{font-size:15px;margin-bottom:36px}
+  .contact-trust{grid-template-columns:repeat(3,1fr);gap:8px;padding-top:28px}
+  .contact-trust-item{padding:14px 10px 14px 12px;border-radius:10px;gap:6px}
+  .contact-trust-num{font-size:26px}
+  .contact-trust-label{font-size:9.5px;letter-spacing:0.08em}
+  .contact-right{padding:32px 22px 28px;border-radius:18px}
+  .contact-right::before{left:18px;right:18px}
+  .contact-form{gap:16px}
+  .contact-field input,.contact-field textarea,.contact-field select{font-size:16px;padding:13px 14px;min-height:48px}
+  .contact-field select{background-position:right 14px center;padding-right:40px}
+  .contact-submit{height:56px;font-size:14.5px;width:100%}
   .dato-destacado{flex-direction:column;align-items:flex-start;gap:14px;padding:26px 24px}
   .wa-mid{margin:48px 20px;padding:28px 24px;flex-direction:column;align-items:flex-start;gap:18px;text-align:left}
   .wa-mid-btn{width:100%;justify-content:center}
@@ -889,14 +913,12 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
 <section class="contact-section">
   <div class="contact-inner">
     <div class="contact-left">
-      <div class="contact-eyebrow">✦ Cotización gratuita · Respuesta el mismo día</div>
-      <h2 class="contact-title">¿Tienes el espacio?<br>Nosotros ponemos el resto.</h2>
+      <div class="contact-eyebrow">Cotización gratuita · Respuesta el mismo día</div>
+      <h2 class="contact-title">¿Tienes el espacio?<br>Nosotros ponemos el <em>resto</em>.</h2>
       <p class="contact-sub">Llena los 4 campos y te mandamos opciones y precios por WhatsApp hoy mismo. Sin compromiso, sin presión.</p>
       <div class="contact-trust">
         <div class="contact-trust-item"><div class="contact-trust-num">9</div><div class="contact-trust-label">Años garantía<br>en decoloración</div></div>
-        <div class="contact-trust-divider"></div>
         <div class="contact-trust-item"><div class="contact-trust-num">&lt;1h</div><div class="contact-trust-label">Tiempo<br>de respuesta</div></div>
-        <div class="contact-trust-divider"></div>
         <div class="contact-trust-item"><div class="contact-trust-num">MX</div><div class="contact-trust-label">Cobertura<br>nacional</div></div>
       </div>
     </div>
