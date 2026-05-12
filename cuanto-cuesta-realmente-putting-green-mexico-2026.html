@@ -25,7 +25,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;overflow-x:hidden}
+html,body{width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
+*{min-width:0}
 :root{
   --primary:#141a10;--secondary:#2a4028;
   --accent:#a8c47d;
@@ -46,7 +47,7 @@ body{font-family:var(--font-b);color:var(--text);background:var(--bg);line-heigh
 img{max-width:100%;height:auto;display:block}
 a{color:var(--primary);text-decoration:none}
 a:hover{text-decoration:underline}
-h1,h2,h3,h4{font-family:var(--font-d);color:var(--text);letter-spacing:-.02em;line-height:1.2}
+h1,h2,h3,h4{font-family:var(--font-d);color:var(--text);letter-spacing:-.02em;line-height:1.2;overflow-wrap:break-word;word-wrap:break-word;hyphens:auto}
 .ct{width:min(100% - 48px,820px);margin-inline:auto}
 
 /* PROGRESS */
@@ -241,10 +242,10 @@ body:has(.rbar.show) .waf{bottom:92px}
 
 /* MOBILE */
 @media(max-width:480px){
-  body{font-size:15px;padding-bottom:100px}
-  .ct{width:min(100% - 40px,820px)}
+  body{font-size:15px;padding-bottom:90px}
+  .ct{width:min(100% - 36px,820px)}
   .hero{min-height:400px}
-  .hero h1{font-size:clamp(1.9rem,9vw,2.4rem);line-height:1.06}
+  .hero h1{font-size:clamp(1.7rem,8vw,2.2rem);line-height:1.08}
   .hero-sub{font-size:14px}
   .hero-meta{gap:10px;font-size:12px}
   article h2{font-size:clamp(1.3rem,5vw,1.6rem);margin:40px 0 14px}
@@ -279,13 +280,26 @@ body:has(.rbar.show) .waf{bottom:92px}
   .nav-links{display:none}
   .hero{min-height:360px}
   .hero-text{padding:24px 0 32px}
-  .hero h1{font-size:clamp(1.6rem,7.5vw,2rem)}
+  .hero h1{font-size:clamp(1.55rem,7vw,1.95rem);line-height:1.1}
   .hero-lead{font-size:14px}
-  .hero-meta-row{gap:12px;font-size:12px}
-  .hero-stats{margin:0 -20px;padding:0 20px}
-  .hero-stat{padding:18px 0}
-  .hero-stat strong{font-size:20px}
-  .hero-stat span{font-size:10px}
+  .hero-meta-row{gap:10px;font-size:12px;padding-bottom:20px}
+  .hero-stats{margin:0 -18px;padding:0 18px}
+  .hero-stat{padding:16px 4px}
+  .hero-stat strong{font-size:18px}
+  .hero-stat span{font-size:10px;line-height:1.25}
+  /* Reading bar: trim padding so links don't underflow WhatsApp float */
+  .rbar{padding:10px 0}
+  .rbar-in{padding-right:72px;gap:10px;width:min(100% - 32px,820px)}
+  .rbar-back{font-size:12px;padding:6px 12px}
+  /* Cat-bar pills sized for thumbs */
+  .cat-pill{min-height:36px;padding:8px 14px}
+  /* TOC tighter padding mobile */
+  .toc{padding:18px 18px;margin:22px 0}
+  /* CTA buttons: never narrower than tap-target */
+  .h-banner-cta,.cta-btn,.tldr-cta,.wa-mid-btn{min-height:44px}
+  /* Tables: scroll wrapper safe */
+  .tw{max-width:100%}
+  table{min-width:380px}
 }
 @media(min-width:481px) and (max-width:1024px){
   .nav-links a:not(.nav-cta){display:none}

@@ -28,6 +28,7 @@
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
 :root{
   --color-primary:#141a10;
   --color-secondary:#2a4028;
@@ -46,8 +47,9 @@
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:var(--font-body);color:var(--color-text);background:var(--color-bg);line-height:1.6;font-size:16px}
 img{max-width:100%;height:auto;display:block}
-h1,h2,h3,h4{font-family:var(--font-display);color:var(--color-text);letter-spacing:-.03em;line-height:1.2}
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--color-text);letter-spacing:-.03em;line-height:1.2;overflow-wrap:break-word;word-wrap:break-word}
 .container{max-width:1240px;margin:0 auto;padding:0 24px}
+@media(max-width:600px){.container{padding:0 18px}}
 
 /* HEADER */
 header{background:#fff;border-bottom:1px solid var(--color-border);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);background:rgba(255,255,255,.96)}
@@ -65,14 +67,14 @@ header{background:#fff;border-bottom:1px solid var(--color-border);position:stic
 .blog-hero{padding:80px 0 56px;background:linear-gradient(180deg,#fff 0%,var(--color-bg-alt) 100%);border-bottom:1px solid var(--color-border)}
 .blog-hero-inner{max-width:960px;margin:0 auto;text-align:center}
 .blog-hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--color-primary);margin-bottom:16px;padding:6px 14px;background:#fff;border:1px solid var(--color-border);border-radius:999px}
-.blog-hero h1{font-size:clamp(2.5rem,5.5vw,4.4rem);font-weight:800;margin-bottom:20px;letter-spacing:-.04em;line-height:1.05}
+.blog-hero h1{font-size:clamp(1.85rem,5.5vw,4.4rem);font-weight:800;margin-bottom:20px;letter-spacing:-.04em;line-height:1.08;hyphens:auto}
 .blog-hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--color-primary) 0%,var(--color-secondary) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .blog-hero p{font-size:18px;color:var(--color-text-light);max-width:640px;margin:0 auto;line-height:1.55}
 
 /* FILTROS */
 .filters{padding:32px 0;border-bottom:1px solid var(--color-border);background:#fff;position:sticky;top:63px;z-index:90}
 .filters-inner{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.filter{padding:9px 18px;border:1.5px solid var(--color-border);border-radius:999px;font-size:13px;font-weight:600;color:var(--color-text-light);cursor:pointer;background:#fff;transition:all .2s;text-decoration:none;font-family:var(--font-display)}
+.filter{padding:9px 18px;border:1.5px solid var(--color-border);border-radius:999px;font-size:13px;font-weight:600;color:var(--color-text-light);cursor:pointer;background:#fff;transition:all .2s;text-decoration:none;font-family:var(--font-display);min-height:40px;display:inline-flex;align-items:center;line-height:1;white-space:nowrap}
 .filter:hover,.filter.active{background:var(--color-primary);color:var(--color-accent);border-color:var(--color-primary)}
 
 /* FEATURED */
@@ -139,8 +141,56 @@ footer .container{padding:0 24px}
 @media(max-width:1024px){
   .nav-menu{position:fixed;top:62px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:16px 24px;border-bottom:1px solid var(--color-border);max-height:0;overflow:hidden;transition:max-height .3s}
   .nav-menu.open{max-height:600px}
-  .nav-menu a{padding:14px 0;border-bottom:1px solid var(--color-border);width:100%;text-align:center}
-  .burger{display:block}
+  .nav-menu a{padding:14px 0;border-bottom:1px solid var(--color-border);width:100%;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center}
+  .burger{min-width:44px;min-height:44px;align-items:center;justify-content:center;flex-direction:column}
+  .burger,.burger.show{display:flex}
+}
+
+/* MOBILE PARITY — 600px */
+@media(max-width:600px){
+  body{font-size:15px}
+  .container{padding:0 18px}
+  .blog-hero{padding:56px 0 40px}
+  .blog-hero p{font-size:15px;line-height:1.55}
+  .blog-hero .kicker{font-size:11px;padding:5px 12px;margin-bottom:14px}
+  /* Filters horizontal scroll on mobile */
+  .filters{padding:14px 0;top:58px}
+  .filters-inner{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:0 18px;margin:0 -18px;scrollbar-width:none;-ms-overflow-style:none}
+  .filters-inner::-webkit-scrollbar{display:none}
+  .filter{flex-shrink:0;font-size:12.5px;padding:8px 14px;min-height:38px}
+  /* Featured */
+  .featured{padding:36px 0 28px}
+  .featured-card{gap:20px}
+  .featured-content h2{font-size:1.55rem;line-height:1.18;margin-bottom:12px}
+  .featured-content p{font-size:15px;margin-bottom:18px}
+  .featured-tag{font-size:10px;padding:4px 11px;margin-bottom:12px}
+  .featured-btn{padding:13px 22px;font-size:14px;min-height:44px}
+  /* Blog grid */
+  .blog-section{padding:32px 0 60px}
+  .sec-title{margin-bottom:24px}
+  .sec-title h2{font-size:1.4rem}
+  .blog-grid{gap:18px}
+  .blog-body{padding:20px}
+  .blog-body h3{font-size:17px;line-height:1.28}
+  /* CTA */
+  .blog-cta{padding:56px 0}
+  .blog-cta h2{font-size:1.55rem}
+  .blog-cta-inner{padding:0 18px}
+  .blog-cta p{font-size:15px;margin-bottom:24px}
+  .blog-cta-btn{padding:15px 22px;font-size:15px;min-height:48px;width:100%;max-width:100%;justify-content:center;box-sizing:border-box}
+  /* Footer */
+  footer{padding:40px 0 20px}
+  footer .container{padding:0 18px}
+  .foot-grid{gap:24px;margin-bottom:28px}
+  .foot-bottom{text-align:center;flex-direction:column;gap:6px}
+  /* Header nav */
+  .nav{padding:12px 0;gap:10px}
+  .logo{font-size:16px}
+}
+@media(max-width:400px){
+  .blog-hero h1{font-size:1.6rem;line-height:1.1}
+  .featured-content h2{font-size:1.35rem}
+  .container{padding:0 16px}
 }
 </style>
 </head>
@@ -188,7 +238,7 @@ footer .container{padding:0 24px}
   <div class="container">
     <a href="/cuanto-cuesta-putting-green-residencial-mexico.html" class="featured-card">
       <div class="featured-img">
-        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1400&q=85" alt="Putting green residencial Hole One Greens en jardín premium — Cuánto cuesta un putting green en México">
+        <img src="/img/hero-putting-green-nocturno.jpg" alt="Putting green residencial Hole One Greens en jardín premium — Cuánto cuesta un putting green en México">
       </div>
       <div class="featured-content">
         <span class="featured-tag">Artículo destacado</span>
@@ -212,7 +262,7 @@ footer .container{padding:0 24px}
       <a href="/cuanto-cuesta-realmente-putting-green-mexico-2026.html" class="blog-card" data-cat="inversion">
         <div class="blog-img">
           <span class="blog-cat">Inversión · Pillar</span>
-          <img src="https://images.unsplash.com/photo-1593111774970-1ce98bee1bf1?w=1200&q=85" alt="Cuánto cuesta REALMENTE un putting green en México 2026" loading="lazy">
+          <img src="/img/hero-putting-green-nocturno.jpg" alt="Cuánto cuesta REALMENTE un putting green en México 2026" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>¿Cuánto cuesta REALMENTE un putting green en México 2026?</h3>
@@ -224,7 +274,7 @@ footer .container{padding:0 24px}
       <a href="/construir-mini-golf-cuesta-menos-que-alberca.html" class="blog-card" data-cat="comparativas">
         <div class="blog-img">
           <span class="blog-cat">Comparativas</span>
-          <img src="https://images.unsplash.com/photo-1551601651-bc60f254d532?w=1200&q=85" alt="Construir un mini golf cuesta menos que una alberca — comparativa real" loading="lazy">
+          <img src="/img/art2-hero-mini-golf.jpg" alt="Construir un mini golf cuesta menos que una alberca — comparativa real" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Construir un mini golf cuesta MENOS que una alberca</h3>
@@ -236,7 +286,7 @@ footer .container{padding:0 24px}
       <a href="/putting-green-vs-simulador-golf-casa.html" class="blog-card" data-cat="comparativas">
         <div class="blog-img">
           <span class="blog-cat">Comparativas</span>
-          <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?w=1200&q=85" alt="Putting green vs simulador de golf en casa — comparativa $250K MXN" loading="lazy">
+          <img src="/img/art3-hero-setup.jpg" alt="Putting green vs simulador de golf en casa — comparativa $250K MXN" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Putting green vs simulador de golf: ¿cuál con $250,000 MXN?</h3>
@@ -248,7 +298,7 @@ footer .container{padding:0 24px}
       <a href="/cuanto-cuesta-putting-green-residencial-mexico.html" class="blog-card" data-cat="inversion">
         <div class="blog-img">
           <span class="blog-cat">Inversión</span>
-          <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=85" alt="El costo real de un putting green residencial en México" loading="lazy">
+          <img src="/img/residencia-aerea.jpg" alt="El costo real de un putting green residencial en México" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>El costo real de un putting green residencial</h3>
@@ -260,7 +310,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="medidas">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Medidas</span>
-          <img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=1200&q=85" alt="Medidas oficiales de un putting green residencial" loading="lazy">
+          <img src="/img/art2-layouts-topdown.jpg" alt="Medidas oficiales de un putting green residencial" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Medidas oficiales de putting greens residenciales</h3>
@@ -272,7 +322,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="comparativas">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Comparativas</span>
-          <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?w=1200&q=85" alt="Pasto sintético vs natural para putting green" loading="lazy">
+          <img src="/img/art3-hero-setup.jpg" alt="Pasto sintético vs natural para putting green" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Sintético vs natural: la decisión correcta</h3>
@@ -284,7 +334,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="inversion">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Inversión</span>
-          <img src="https://images.unsplash.com/photo-1571366343168-d9882ed8ff7c?w=1200&q=85" alt="Plusvalía de un putting green en propiedad residencial premium" loading="lazy">
+          <img src="/img/case-merida.jpg" alt="Plusvalía de un putting green en propiedad residencial premium" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Plusvalía: cuánto suma un putting green a tu propiedad</h3>
@@ -296,7 +346,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="tecnica">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Técnica</span>
-          <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1200&q=85" alt="El putt corto y el handicap en golf — Hole One Greens" loading="lazy">
+          <img src="/img/art3-green-outdoor.jpg" alt="El putt corto y el handicap en golf — Hole One Greens" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>El putt corto: el golpe que decide tu handicap</h3>
@@ -308,7 +358,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="instalacion">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Instalación</span>
-          <img src="https://images.unsplash.com/photo-1593111774970-1ce98bee1bf1?w=1200&q=85" alt="Putting green en terraza o azotea residencial" loading="lazy">
+          <img src="/img/hero-putting-green-nocturno.jpg" alt="Putting green en terraza o azotea residencial" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Putting green en terraza, azotea o roof garden</h3>
@@ -320,7 +370,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="instalacion">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Instalación</span>
-          <img src="https://images.unsplash.com/photo-1551601651-bc60f254d532?w=1200&q=85" alt="Iluminación LED nocturna para putting green residencial" loading="lazy">
+          <img src="/img/art2-hero-mini-golf.jpg" alt="Iluminación LED nocturna para putting green residencial" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Iluminación LED nocturna: jugar después de las 7 pm</h3>
@@ -332,7 +382,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="instalacion">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Mantenimiento</span>
-          <img src="https://images.unsplash.com/photo-1611374243150-4b5ca6c5fdc6?w=1200&q=85" alt="Mantenimiento de putting green sintético" loading="lazy">
+          <img src="/img/green-nocturno.jpg" alt="Mantenimiento de putting green sintético" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Mantenimiento: 15 minutos al mes, 15 años de vida útil</h3>
@@ -344,7 +394,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="zonas">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Monterrey</span>
-          <img src="https://images.unsplash.com/photo-1597858520171-563a8e8b9925?w=1200&q=85" alt="Putting greens residenciales en Monterrey y San Pedro" loading="lazy">
+          <img src="/img/case-san-pedro.jpg" alt="Putting greens residenciales en Monterrey y San Pedro" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Putting greens en Monterrey y San Pedro Garza García</h3>
@@ -356,7 +406,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="zonas">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · CDMX</span>
-          <img src="https://images.unsplash.com/photo-1518795884050-fbb20e1f0afb?w=1200&q=85" alt="Putting greens residenciales en Ciudad de México" loading="lazy">
+          <img src="/img/case-polanco.jpg" alt="Putting greens residenciales en Ciudad de México" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Putting greens en Ciudad de México: Polanco, Bosques, Lomas</h3>
@@ -368,7 +418,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="zonas">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Riviera Maya</span>
-          <img src="https://images.unsplash.com/photo-1571366343168-d9882ed8ff7c?w=1200&q=85" alt="Putting greens residenciales en Mérida y Riviera Maya" loading="lazy">
+          <img src="/img/case-merida.jpg" alt="Putting greens residenciales en Mérida y Riviera Maya" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Putting greens en Mérida, Cancún y Riviera Maya</h3>
@@ -380,7 +430,7 @@ footer .container{padding:0 24px}
       <a href="#" class="blog-card soon" data-cat="medidas">
         <div class="blog-img">
           <span class="blog-cat soon-tag">Próximamente · Guía</span>
-          <img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=1200&q=85" alt="Cómo elegir el tamaño correcto de tu putting green" loading="lazy">
+          <img src="/img/art2-layouts-topdown.jpg" alt="Cómo elegir el tamaño correcto de tu putting green" loading="lazy">
         </div>
         <div class="blog-body">
           <h3>Cómo elegir el tamaño correcto para tu jardín</h3>

@@ -50,9 +50,13 @@
   --font-display:'DM Sans','Inter',-apple-system,system-ui,sans-serif;
   --font-body:'Inter',-apple-system,system-ui,sans-serif;
 }
+html,body{width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%}
+*{min-width:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--font-body);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{overflow-wrap:break-word;word-wrap:break-word;hyphens:auto}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:#0e0e0c;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08)}
 .brand{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--gold-pale);letter-spacing:-0.02em}
@@ -303,24 +307,56 @@ a{text-decoration:none;color:inherit}
 }
 
 @media(max-width:900px){
-.nav{padding:0 24px}.nav-links{display:none}
-.breadcrumb{padding:14px 24px}
-.art-header{padding:120px 24px 60px;min-height:auto;background-position:right center}
+.nav{padding:0 20px;height:64px}.nav-links{display:none}
+.brand{font-size:17px}
+.nav-cta{padding:9px 16px;font-size:12.5px}
+.breadcrumb{padding:12px 20px;margin-top:64px}
+.breadcrumb-inner{font-size:11.5px;flex-wrap:wrap}
+.cat-bar{top:64px;padding:10px 16px}
+.art-header{padding:110px 20px 50px;min-height:auto;background-position:right center}
 .art-header::before{background:linear-gradient(180deg,rgba(14,14,12,0.85) 0%,rgba(14,14,12,0.6) 100%)}
 .art-header-inner{padding-right:0}
-.art-wrap{padding:48px 24px 64px}
-.art-cover img{height:280px}
+.art-header h1{font-size:clamp(28px,7vw,38px);line-height:1.08}
+.art-header-sub{font-size:15px;line-height:1.5}
+.art-wrap{padding:40px 20px 56px}
+.art-cover{margin-bottom:32px}
+.art-cover img{height:220px}
+.art-body p,.art-body p.lead{font-size:15.5px;line-height:1.7}
+.art-body p.lead{font-size:16.5px}
+.art-body ul{font-size:15px;line-height:1.65}
+.art-body h2{font-size:clamp(22px,5.5vw,26px);margin:36px 0 14px;padding-top:18px}
+.art-body h3{font-size:clamp(18px,4.5vw,20px);margin:24px 0 10px}
 .includes-grid,.roi-grid,.profile-grid,.scenario-body{grid-template-columns:1fr}
-.pull-quote{padding:32px 24px}
+.pull-quote{padding:28px 20px;margin:32px 0}
 .comp-table{font-size:12.5px}.comp-table th,.comp-table td{padding:10px 8px}
-.contact-inner{grid-template-columns:1fr;gap:48px;padding:64px 24px}
-.contact-trust{gap:14px;flex-wrap:wrap}.contact-trust-num{font-size:28px}
-.contact-right{padding:32px 24px}
-.dato-destacado{flex-direction:column;align-items:flex-start;gap:12px;padding:24px}
-.q-item{padding:20px 22px;gap:14px}
-.q-item::before{font-size:28px}
-.scenario{padding:24px 22px}
+.contact-inner{grid-template-columns:1fr;gap:40px;padding:56px 20px}
+.contact-trust{gap:14px;flex-wrap:wrap}.contact-trust-num{font-size:26px}
+.contact-right{padding:28px 20px}
+.dato-destacado{flex-direction:column;align-items:flex-start;gap:12px;padding:22px}
+.dato-numero{font-size:clamp(32px,9vw,48px)}
+.dato-label{font-size:13.5px}
+.q-item{padding:18px 20px;gap:12px}
+.q-item::before{font-size:26px}
+.scenario{padding:22px 18px}
 .scenario-head{flex-direction:column;align-items:flex-start;gap:6px}
+.faq-q{font-size:14.5px;padding:16px 18px}
+.faq-a{font-size:14px;padding:0 18px 18px}
+.blog-ft{padding:44px 20px}
+}
+@media(max-width:480px){
+.art-wrap{padding:32px 16px 48px}
+.art-header{padding:100px 16px 40px}
+.art-header h1{font-size:26px;line-height:1.08}
+.art-cover img{height:180px}
+.tldr{margin:24px 0 32px;padding:20px 18px}
+.tldr-list li{font-size:13.5px;padding:11px 0 11px 18px}
+.wa-mid{margin:36px 0;padding:22px 20px}
+.wa-mid-title{font-size:16px}
+.cat-bar{padding:10px 14px}
+.cat-pill{font-size:11.5px;padding:7px 13px;min-height:34px}
+.callout{padding:20px 18px}
+.dato-destacado{padding:20px 18px}
+.comp-table th,.comp-table td{padding:8px 6px;font-size:11.5px}
 }
 </style>
 </head>
@@ -377,7 +413,7 @@ a{text-decoration:none;color:inherit}
 <article class="art-wrap">
 
 <figure class="art-cover fade-in">
-  <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1400&q=85" alt="Putting green residencial premium en México vs simulador de golf indoor para casa">
+  <img src="/img/art3-hero-setup.jpg" alt="Putting green residencial premium en México vs simulador de golf indoor para casa">
   <figcaption>El dilema premium 2026: $250,000 MXN entre putting green outdoor o simulador de golf indoor. Análisis honesto, sin sesgo de marca.</figcaption>
 </figure>
 
@@ -443,7 +479,7 @@ a{text-decoration:none;color:inherit}
 <p>Vamos a empezar por la cancha local. Estos son los puntos donde el putting green le gana al simulador, sin debate técnico:</p>
 
 <figure class="art-img-inline fade-in">
-  <img src="https://images.unsplash.com/photo-1592919505780-303950717480?w=1400&q=85" alt="Putting green residencial premium en jardín de casa en México con rough perimetral">
+  <img src="/img/art3-green-outdoor.jpg" alt="Putting green residencial premium en jardín de casa en México con rough perimetral">
   <figcaption>Putting green outdoor: feel real del rodado, lectura de breaks naturales, sin obsolescencia tecnológica. La amenity que más plusvalía agrega a la propiedad.</figcaption>
 </figure>
 
@@ -487,7 +523,7 @@ a{text-decoration:none;color:inherit}
 <p>Ahora el otro lado. Un buen simulador indoor con launch monitor preciso (SkyTrak+, Foresight, Trackman, GolfZon) le gana al green en aspectos críticos que el green simplemente no puede tocar:</p>
 
 <figure class="art-img-inline fade-in">
-  <img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=1400&q=85" alt="Simulador de golf indoor en casa con proyector y pantalla de impacto y launch monitor">
+  <img src="/img/art3-simulador-indoor.jpg" alt="Simulador de golf indoor en casa con proyector y pantalla de impacto y launch monitor">
   <figcaption>Simulador de golf indoor: 18 hoyos virtuales en tu casa, datos de launch monitor (carry, ball speed, smash factor) y entrenamiento de swing completo bajo cualquier clima.</figcaption>
 </figure>
 
@@ -812,7 +848,7 @@ a{text-decoration:none;color:inherit}
 <h2 id="b2b-amenity">Para oficinas ejecutivas, eventos corporativos y clubes privados: el bundle como amenity premium</h2>
 
 <figure class="art-img-inline fade-in">
-  <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=85" alt="Oficina ejecutiva premium con putting green corporativo en México como amenity diferenciador">
+  <img src="/img/art3-b2b-oficina.jpg" alt="Oficina ejecutiva premium con putting green corporativo en México como amenity diferenciador">
   <figcaption>El bundle green + simulador en oficinas corporativas se ha convertido en el amenity diferenciador de empresas premium en México. Headhunters lo reportan como tie-breaker en ofertas C-level.</figcaption>
 </figure>
 
@@ -1017,28 +1053,28 @@ a{text-decoration:none;color:inherit}
     <p class="blog-ft-sub">Guías, comparativas y consejos sobre golf premium en casa</p>
     <div class="blog-ft-grid">
       <a href="/cuanto-cuesta-putting-green-residencial-mexico.html" class="bf-card">
-        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&q=85" alt="Costo putting green residencial México" class="bf-card-img">
+        <img src="/img/case-san-pedro.jpg" alt="Costo putting green residencial México" class="bf-card-img">
         <div class="bf-card-body">
           <span class="bf-card-cat">Inversión</span>
           <span class="bf-card-title">¿Cuánto cuesta un putting green residencial en México?</span>
         </div>
       </a>
       <a href="/cuanto-cuesta-realmente-putting-green-mexico-2026.html" class="bf-card">
-        <img src="https://images.unsplash.com/photo-1592919505881-9f81bedc01a4?w=400&q=85" alt="Costo real putting green 2026" class="bf-card-img">
+        <img src="/img/hero-putting-green-nocturno.jpg" alt="Costo real putting green 2026" class="bf-card-img">
         <div class="bf-card-body">
           <span class="bf-card-cat">Inversión</span>
           <span class="bf-card-title">El costo real de un putting green en 2026</span>
         </div>
       </a>
       <a href="/blog.html" class="bf-card bf-card-soon">
-        <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&q=85" alt="Putt corto técnica" class="bf-card-img">
+        <img src="/img/putting-green-detalle.jpg" alt="Putt corto técnica" class="bf-card-img">
         <div class="bf-card-body">
           <span class="bf-card-cat">Próximamente · Técnica</span>
           <span class="bf-card-title">El putt corto: el golpe que decide tu handicap</span>
         </div>
       </a>
       <a href="/blog.html" class="bf-card bf-card-soon">
-        <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?w=400&q=85" alt="Sintético vs natural" class="bf-card-img">
+        <img src="/img/art3-green-outdoor.jpg" alt="Sintético vs natural" class="bf-card-img">
         <div class="bf-card-body">
           <span class="bf-card-cat">Próximamente · Comparativas</span>
           <span class="bf-card-title">Sintético vs natural: la decisión correcta</span>
