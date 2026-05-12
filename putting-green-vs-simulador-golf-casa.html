@@ -406,6 +406,14 @@ header .nav-cta:hover{background:var(--secondary);color:#fff!important;transform
 .dato-destacado{padding:20px 18px}
 .comp-table th,.comp-table td{padding:8px 6px;font-size:11.5px}
 }
+
+/* FIX: specificity override — el subtítulo dark sobre bg dark heredaba color gris de .art-body p */
+.wa-mid .wa-mid-desc,.cta-mid .cta-mid-desc,.wa-mid p.wa-mid-desc,article .wa-mid-desc{color:rgba(255,255,255,0.88)!important}
+.wa-mid .wa-mid-title,.cta-mid .cta-mid-title{color:#fff!important}
+.h-banner .h-banner-desc,article .h-banner-desc{color:rgba(255,255,255,0.85)!important}
+.h-banner .h-banner-title{color:#fff!important}
+.bp .bp-sub,article .bp-sub{color:rgba(255,255,255,0.78)!important}
+/* END FIX */
 </style>
 </head>
 <body>

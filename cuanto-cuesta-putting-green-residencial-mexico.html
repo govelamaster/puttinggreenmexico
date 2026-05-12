@@ -398,6 +398,14 @@ header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top
   .cat-pill{min-height:36px;display:inline-flex;align-items:center;line-height:1;padding-top:8px;padding-bottom:8px;white-space:nowrap;flex-shrink:0}
   .cat-bar,.cat-bar-in{padding-top:8px;padding-bottom:8px}
 }
+
+/* FIX: specificity override — el subtítulo dark sobre bg dark heredaba color gris de .art-body p */
+.wa-mid .wa-mid-desc,.cta-mid .cta-mid-desc,.wa-mid p.wa-mid-desc,article .wa-mid-desc{color:rgba(255,255,255,0.88)!important}
+.wa-mid .wa-mid-title,.cta-mid .cta-mid-title{color:#fff!important}
+.h-banner .h-banner-desc,article .h-banner-desc{color:rgba(255,255,255,0.85)!important}
+.h-banner .h-banner-title{color:#fff!important}
+.bp .bp-sub,article .bp-sub{color:rgba(255,255,255,0.78)!important}
+/* END FIX */
 </style>
 </head>
 <body>

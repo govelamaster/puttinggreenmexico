@@ -402,6 +402,14 @@ body:has(.rbar.show) .waf{bottom:92px}
   0%,100%{transform:translateY(0) scale(1)}
   50%{transform:translateY(-2px) scale(1.06)}
 }
+
+/* FIX: specificity override — el subtítulo dark sobre bg dark heredaba color gris de .art-body p */
+.wa-mid .wa-mid-desc,.cta-mid .cta-mid-desc,.wa-mid p.wa-mid-desc,article .wa-mid-desc{color:rgba(255,255,255,0.88)!important}
+.wa-mid .wa-mid-title,.cta-mid .cta-mid-title{color:#fff!important}
+.h-banner .h-banner-desc,article .h-banner-desc{color:rgba(255,255,255,0.85)!important}
+.h-banner .h-banner-title{color:#fff!important}
+.bp .bp-sub,article .bp-sub{color:rgba(255,255,255,0.78)!important}
+/* END FIX */
 </style>
 
 <script type="application/ld+json">

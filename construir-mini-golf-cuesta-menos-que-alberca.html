@@ -434,6 +434,14 @@ header .nav-cta:hover{background:var(--secondary);color:#fff!important}
 .blog-ft-all{text-align:center}
 .blog-ft-all a{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:transparent;border:1px solid var(--ink);border-radius:100px;font-size:12px;font-weight:700;letter-spacing:0.04em;color:var(--ink);transition:all .25s}
 .blog-ft-all a:hover{background:var(--ink);color:var(--gold-pale)}
+
+/* FIX: specificity override — el subtítulo dark sobre bg dark heredaba color gris de .art-body p */
+.wa-mid .wa-mid-desc,.cta-mid .cta-mid-desc,.wa-mid p.wa-mid-desc,article .wa-mid-desc{color:rgba(255,255,255,0.88)!important}
+.wa-mid .wa-mid-title,.cta-mid .cta-mid-title{color:#fff!important}
+.h-banner .h-banner-desc,article .h-banner-desc{color:rgba(255,255,255,0.85)!important}
+.h-banner .h-banner-title{color:#fff!important}
+.bp .bp-sub,article .bp-sub{color:rgba(255,255,255,0.78)!important}
+/* END FIX */
 </style>
 </head>
 <body>
